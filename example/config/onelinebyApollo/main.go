@@ -15,10 +15,11 @@
 package main
 
 import (
+	"aex_jupiter/pkg/conf"
+	_ "aex_jupiter/pkg/datasource/apollo"
+	"aex_jupiter/pkg/xlog"
+
 	"github.com/douyu/jupiter"
-	"github.com/douyu/jupiter/pkg/conf"
-	_ "github.com/douyu/jupiter/pkg/datasource/apollo"
-	"github.com/douyu/jupiter/pkg/xlog"
 )
 
 // apollo: http://106.54.227.205/config.html#/appid=jupiter&env=DEV&cluster=default

@@ -19,11 +19,12 @@ import (
 	"math/rand"
 	"time"
 
+	"aex_jupiter/pkg/sentinel"
+	"aex_jupiter/pkg/util/xgo"
+	"aex_jupiter/pkg/util/xtime"
+	"aex_jupiter/pkg/xlog"
+
 	"github.com/douyu/jupiter"
-	"github.com/douyu/jupiter/pkg/sentinel"
-	"github.com/douyu/jupiter/pkg/util/xgo"
-	"github.com/douyu/jupiter/pkg/util/xtime"
-	"github.com/douyu/jupiter/pkg/xlog"
 )
 
 // run: go run main.go -config=config.toml

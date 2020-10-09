@@ -19,9 +19,10 @@ import (
 	"log"
 	"path/filepath"
 
-	"github.com/douyu/jupiter/pkg/util/xfile"
-	"github.com/douyu/jupiter/pkg/util/xgo"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"aex_jupiter/pkg/util/xfile"
+	"aex_jupiter/pkg/util/xgo"
+	"aex_jupiter/pkg/xlog"
+
 	"github.com/fsnotify/fsnotify"
 )
 

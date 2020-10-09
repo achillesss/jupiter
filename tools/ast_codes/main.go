@@ -24,10 +24,11 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/douyu/jupiter/pkg/xlog"
+	"aex_jupiter/pkg/xlog"
 
-	"github.com/douyu/jupiter/pkg/flag"
-	"github.com/douyu/jupiter/pkg/util/xdebug"
+	"aex_jupiter/pkg/flag"
+	"aex_jupiter/pkg/util/xdebug"
+
 	"github.com/fatih/structtag"
 	"github.com/flosch/pongo2"
 
@@ -145,7 +146,7 @@ func main() {
 			data[mod][n.Level] = append(data[mod][n.Level], map[string]interface{}{
 				"message":  n.Message,
 				"fields":   strings.Join(fields, ","),
-				"position": "https://github.com/douyu/jupiter/blob/master/" + filepath + "#L" + strconv.Itoa(n.Position.Line),
+				"position": "https://aex_jupiter/blob/master/" + filepath + "#L" + strconv.Itoa(n.Position.Line),
 			})
 		}
 	}
@@ -214,7 +215,7 @@ func main() {
 				mdData["pkg"] = desc.Package
 				mdData["name"] = desc.Name
 				mdData["fields"] = mdfields
-				mdData["position"] = "https://github.com/douyu/jupiter/blob/master/" + filepath + "#L" + strconv.Itoa(desc.Position.Line)
+				mdData["position"] = "https://aex_jupiter/blob/master/" + filepath + "#L" + strconv.Itoa(desc.Position.Line)
 			}
 
 			fmt.Printf("mdData = %+v\n", mdData["position"])
@@ -279,7 +280,7 @@ type MDConfig struct {
 var configMDTemplate = `
 # mienrva 配置结构列表
 
-> 本文档是由github.com/douyu/jupiter/script/ast_codes自动生成   
+> 本文档是由aex_jupiter/script/ast_codes自动生成   
 > 配置格式有变更时，请执行: cd script/ast_codes; go run main.go --dir=../../; cd -  
 
 {% for config in configs %}

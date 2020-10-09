@@ -15,12 +15,13 @@
 package main
 
 import (
-	"github.com/douyu/jupiter/pkg/conf"
+	"aex_jupiter/pkg/conf"
 	"time"
 
+	"aex_jupiter/pkg/server/xecho"
+	"aex_jupiter/pkg/xlog"
+
 	"github.com/douyu/jupiter"
-	"github.com/douyu/jupiter/pkg/server/xecho"
-	"github.com/douyu/jupiter/pkg/xlog"
 )
 
 //  go run main.go --config="http://127.0.0.1:60814/api/v1/agent/config?name=douyu-wsd-shirou&env=dev&target=config-dev-test.toml&port=8023"

@@ -15,8 +15,9 @@
 package apollo
 
 import (
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"aex_jupiter/pkg/conf"
+	"aex_jupiter/pkg/xlog"
+
 	"github.com/philchia/agollo/v4"
 )
 

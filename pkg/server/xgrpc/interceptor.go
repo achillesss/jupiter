@@ -22,9 +22,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/ecode"
-	"github.com/douyu/jupiter/pkg/trace"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"aex_jupiter/pkg/ecode"
+	"aex_jupiter/pkg/trace"
+	"aex_jupiter/pkg/xlog"
+
 	"github.com/opentracing/opentracing-go/ext"
 	"go.uber.org/zap"
 	"google.golang.org/grpc/codes"
@@ -32,7 +33,8 @@ import (
 	"google.golang.org/grpc/peer"
 	"google.golang.org/grpc/status"
 
-	"github.com/douyu/jupiter/pkg/metric"
+	"aex_jupiter/pkg/metric"
+
 	"google.golang.org/grpc"
 )
 

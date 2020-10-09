@@ -23,8 +23,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/util/xcast"
-	"github.com/douyu/jupiter/pkg/util/xmap"
+	"aex_jupiter/pkg/util/xcast"
+	"aex_jupiter/pkg/util/xmap"
+
 	"github.com/mitchellh/mapstructure"
 	"github.com/pkg/errors"
 )

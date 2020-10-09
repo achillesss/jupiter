@@ -17,12 +17,12 @@ package etcdv3
 import (
 	"time"
 
-	"github.com/douyu/jupiter/pkg/ecode"
-	"github.com/douyu/jupiter/pkg/registry"
+	"aex_jupiter/pkg/ecode"
+	"aex_jupiter/pkg/registry"
 
-	"github.com/douyu/jupiter/pkg/client/etcdv3"
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"aex_jupiter/pkg/client/etcdv3"
+	"aex_jupiter/pkg/conf"
+	"aex_jupiter/pkg/xlog"
 )
 
 // StdConfig ...

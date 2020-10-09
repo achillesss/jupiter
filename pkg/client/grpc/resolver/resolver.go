@@ -17,9 +17,10 @@ package resolver
 import (
 	"context"
 
-	"github.com/douyu/jupiter/pkg/constant"
-	"github.com/douyu/jupiter/pkg/registry"
-	"github.com/douyu/jupiter/pkg/util/xgo"
+	"aex_jupiter/pkg/constant"
+	"aex_jupiter/pkg/registry"
+	"aex_jupiter/pkg/util/xgo"
+
 	"google.golang.org/grpc/attributes"
 	"google.golang.org/grpc/resolver"
 )

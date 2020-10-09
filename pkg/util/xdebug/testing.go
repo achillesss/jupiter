@@ -20,11 +20,12 @@ import (
 	"os"
 	"sync"
 
-	"github.com/douyu/jupiter/pkg/util/xcolor"
-	"github.com/douyu/jupiter/pkg/util/xstring"
+	"aex_jupiter/pkg/util/xcolor"
+	"aex_jupiter/pkg/util/xstring"
+
 	"github.com/tidwall/pretty"
 
-	"github.com/douyu/jupiter/pkg/xlog"
+	"aex_jupiter/pkg/xlog"
 )
 
 var (

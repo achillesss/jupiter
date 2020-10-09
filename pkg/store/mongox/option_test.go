@@ -6,8 +6,9 @@ import (
 	"testing"
 	"time"
 
+	"aex_jupiter/pkg/conf"
+
 	"github.com/BurntSushi/toml"
-	"github.com/douyu/jupiter/pkg/conf"
 )
 
 func TestMain(m *testing.M) {

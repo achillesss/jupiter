@@ -15,11 +15,12 @@
 package main
 
 import (
+	"aex_jupiter/pkg/worker/xcron"
+	"aex_jupiter/pkg/xlog"
 	"fmt"
-	"github.com/douyu/jupiter"
-	"github.com/douyu/jupiter/pkg/worker/xcron"
-	"github.com/douyu/jupiter/pkg/xlog"
 	"time"
+
+	"github.com/douyu/jupiter"
 )
 
 func main() {

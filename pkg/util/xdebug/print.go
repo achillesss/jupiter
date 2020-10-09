@@ -17,8 +17,9 @@ package xdebug
 import (
 	"fmt"
 
-	"github.com/douyu/jupiter/pkg/util/xcolor"
-	"github.com/douyu/jupiter/pkg/util/xstring"
+	"aex_jupiter/pkg/util/xcolor"
+	"aex_jupiter/pkg/util/xstring"
+
 	"github.com/tidwall/pretty"
 )
 

@@ -17,7 +17,7 @@ package xlog_test
 import (
 	"testing"
 
-	"github.com/douyu/jupiter/pkg/xlog"
+	"aex_jupiter/pkg/xlog"
 )
 
 func Test_Info(t *testing.T) {

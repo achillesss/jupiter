@@ -17,11 +17,12 @@ package xecho
 import (
 	"fmt"
 
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/constant"
-	"github.com/douyu/jupiter/pkg/ecode"
-	"github.com/douyu/jupiter/pkg/flag"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"aex_jupiter/pkg/conf"
+	"aex_jupiter/pkg/constant"
+	"aex_jupiter/pkg/ecode"
+	"aex_jupiter/pkg/flag"
+	"aex_jupiter/pkg/xlog"
+
 	"github.com/pkg/errors"
 )
 

@@ -19,9 +19,10 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/douyu/jupiter/pkg/constant"
-	"github.com/douyu/jupiter/pkg/registry"
-	"github.com/douyu/jupiter/pkg/server"
+	"aex_jupiter/pkg/constant"
+	"aex_jupiter/pkg/registry"
+	"aex_jupiter/pkg/server"
+
 	"github.com/smallnest/weighted"
 	"google.golang.org/grpc/attributes"
 	"google.golang.org/grpc/balancer"

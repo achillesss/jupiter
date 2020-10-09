@@ -15,11 +15,12 @@
 package main
 
 import (
-	"github.com/douyu/jupiter"
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/server/xecho"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"aex_jupiter/pkg/conf"
+	"aex_jupiter/pkg/server/xecho"
+	"aex_jupiter/pkg/xlog"
 	"time"
+
+	"github.com/douyu/jupiter"
 )
 
 //  go run main.go --config=config.toml --watch=true

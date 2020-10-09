@@ -15,13 +15,14 @@
 package main
 
 import (
+	_ "aex_jupiter/example/http/gin-swagger/docs"
+	"aex_jupiter/pkg/server/xgin"
+	"aex_jupiter/pkg/xlog"
+
 	"github.com/douyu/jupiter"
-	_ "github.com/douyu/jupiter/example/http/gin-swagger/docs"
-	"github.com/douyu/jupiter/pkg/server/xgin"
-	"github.com/douyu/jupiter/pkg/xlog"
 	"github.com/gin-gonic/gin"
-	"github.com/swaggo/files"
 	"github.com/swaggo/gin-swagger"
+	"github.com/swaggo/gin-swagger/swaggerFiles"
 )
 
 // @title Swagger Example API

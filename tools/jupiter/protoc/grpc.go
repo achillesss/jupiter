@@ -1,9 +1,9 @@
 package protoc
 
 import (
+	"aex_jupiter/pkg/util/xcolor"
 	"errors"
 	"fmt"
-	"github.com/douyu/jupiter/pkg/util/xcolor"
 	"os"
 	"os/exec"
 	"path/filepath"

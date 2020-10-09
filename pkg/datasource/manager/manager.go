@@ -4,7 +4,7 @@ import (
 	"errors"
 	"net/url"
 
-	"github.com/douyu/jupiter/pkg/conf"
+	"aex_jupiter/pkg/conf"
 )
 
 var (

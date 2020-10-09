@@ -1,9 +1,10 @@
 package main
 
 import (
+	"aex_jupiter/pkg/xlog"
 	"fmt"
+
 	"github.com/douyu/jupiter"
-	"github.com/douyu/jupiter/pkg/xlog"
 )
 
 // go run main.go --job=jobrunner

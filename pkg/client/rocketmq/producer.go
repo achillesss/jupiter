@@ -17,13 +17,14 @@ package rocketmq
 import (
 	"context"
 
+	"aex_jupiter/pkg/defers"
+	"aex_jupiter/pkg/istats"
+	"aex_jupiter/pkg/util/xdebug"
+	"aex_jupiter/pkg/xlog"
+
 	"github.com/apache/rocketmq-client-go/v2"
 	"github.com/apache/rocketmq-client-go/v2/primitive"
 	"github.com/apache/rocketmq-client-go/v2/producer"
-	"github.com/douyu/jupiter/pkg/defers"
-	"github.com/douyu/jupiter/pkg/istats"
-	"github.com/douyu/jupiter/pkg/util/xdebug"
-	"github.com/douyu/jupiter/pkg/xlog"
 )
 
 type Producer struct {

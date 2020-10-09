@@ -20,10 +20,11 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/metric"
-	"github.com/douyu/jupiter/pkg/trace"
+	"aex_jupiter/pkg/metric"
+	"aex_jupiter/pkg/trace"
 
-	"github.com/douyu/jupiter/pkg/xlog"
+	"aex_jupiter/pkg/xlog"
+
 	"github.com/labstack/echo/v4"
 	"go.uber.org/zap"
 )

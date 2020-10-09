@@ -18,7 +18,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/coreos/etcd/clientv3/concurrency"
+	"go.etcd.io/etcd/clientv3/concurrency"
 )
 
 // Mutex ...

@@ -17,7 +17,8 @@ package defers
 import (
 	"testing"
 
-	"github.com/douyu/jupiter/pkg/util/xdefer"
+	"aex_jupiter/pkg/util/xdefer"
+
 	"github.com/stretchr/testify/assert"
 )
 

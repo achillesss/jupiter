@@ -1,5 +1,5 @@
 PROJECT_NAME := "jupiter"
-PKG := "github.com/douyu/jupiter"
+PKG := "aex_jupiter"
 PKG_LIST := $(shell go list ${PKG}/... | grep /pkg/)
 GO_FILES := $(shell find . -name '*.go' | grep /pkg/ | grep -v _test.go)
 
@@ -61,7 +61,7 @@ demo: ## Build jupiter demo and Run it
 	@APP_NAME=dev go run example/all/cmd/demo/main.go --config=example/all/config/config.toml --watch
 
 demo.build: ## Build jupiter Demo
-	@JUPITER_MODE=dev go build -ldflags  "-X github.com/douyu/jupiter/initialize.AppName=hello" example/all/cmd/demo/main.go
+	@JUPITER_MODE=dev go build -ldflags  "-X aex_jupiter/initialize.AppName=hello" example/all/cmd/demo/main.go
 
 license: ## Add license header for all code files
 	@find . -name \*.go -exec sh -c "if ! grep -q 'LICENSE' '{}'; then mv '{}' tmp && cp doc/LICENSEHEADER.txt '{}' && cat tmp >> '{}' && rm tmp; fi" \;

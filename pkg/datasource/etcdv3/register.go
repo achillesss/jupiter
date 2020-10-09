@@ -1,11 +1,11 @@
 package etcdv3
 
 import (
-	"github.com/douyu/jupiter/pkg/client/etcdv3"
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/datasource/manager"
-	"github.com/douyu/jupiter/pkg/flag"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"aex_jupiter/pkg/client/etcdv3"
+	"aex_jupiter/pkg/conf"
+	"aex_jupiter/pkg/datasource/manager"
+	"aex_jupiter/pkg/flag"
+	"aex_jupiter/pkg/xlog"
 	"net/url"
 )
 

@@ -18,10 +18,11 @@ import (
 	"context"
 	"net"
 
-	"github.com/douyu/jupiter/pkg/constant"
-	"github.com/douyu/jupiter/pkg/ecode"
-	"github.com/douyu/jupiter/pkg/server"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"aex_jupiter/pkg/constant"
+	"aex_jupiter/pkg/ecode"
+	"aex_jupiter/pkg/server"
+	"aex_jupiter/pkg/xlog"
+
 	"google.golang.org/grpc"
 )
 

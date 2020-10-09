@@ -18,13 +18,14 @@ import (
 	"context"
 	"time"
 
-	"github.com/coreos/etcd/clientv3"
-	"github.com/coreos/etcd/mvcc/mvccpb"
-	"github.com/douyu/jupiter/pkg/client/etcdv3"
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/util/xgo"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"aex_jupiter/pkg/client/etcdv3"
+	"aex_jupiter/pkg/conf"
+	"aex_jupiter/pkg/util/xgo"
+	"aex_jupiter/pkg/xlog"
+
 	"github.com/pkg/errors"
+	"go.etcd.io/etcd/clientv3"
+	"go.etcd.io/etcd/mvcc/mvccpb"
 )
 
 type etcdv3DataSource struct {

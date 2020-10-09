@@ -15,12 +15,13 @@
 package governor
 
 import (
+	"aex_jupiter/pkg"
+	"aex_jupiter/pkg/conf"
 	"encoding/json"
-	"github.com/douyu/jupiter/pkg"
-	"github.com/douyu/jupiter/pkg/conf"
-	jsoniter "github.com/json-iterator/go"
 	"net/http"
 	"os"
+
+	jsoniter "github.com/json-iterator/go"
 )
 
 func init() {

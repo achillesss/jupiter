@@ -22,8 +22,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/util/xgo"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"aex_jupiter/pkg/util/xgo"
+	"aex_jupiter/pkg/xlog"
+
 	"github.com/go-resty/resty/v2"
 )
 

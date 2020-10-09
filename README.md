@@ -1,9 +1,9 @@
 ![](doc/logo.png)
 
-[![GoTest](https://github.com/douyu/jupiter/workflows/Go/badge.svg)](https://github.com/douyu/jupiter/actions)
+[![GoTest](https://aex_jupiter/workflows/Go/badge.svg)](https://aex_jupiter/actions)
 [![codecov](https://codecov.io/gh/douyu/jupiter/branch/master/graph/badge.svg)](https://codecov.io/gh/douyu/jupiter)
-[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white&style=flat-square)](https://pkg.go.dev/github.com/douyu/jupiter?tab=doc)
-[![Go Report Card](https://goreportcard.com/badge/github.com/douyu/jupiter)](https://goreportcard.com/report/github.com/douyu/jupiter)
+[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white&style=flat-square)](https://pkg.go.dev/aex_jupiter?tab=doc)
+[![Go Report Card](https://goreportcard.com/badge/aex_jupiter)](https://goreportcard.com/report/aex_jupiter)
 ![license](https://img.shields.io/badge/license-Apache--2.0-green.svg)
 
 # JUPITER: Governance-oriented Microservice Framework

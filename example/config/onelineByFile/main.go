@@ -15,9 +15,10 @@
 package main
 
 import (
+	"aex_jupiter/pkg/conf"
+	"aex_jupiter/pkg/xlog"
+
 	"github.com/douyu/jupiter"
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/xlog"
 )
 
 //  go run main.go --config=config.toml

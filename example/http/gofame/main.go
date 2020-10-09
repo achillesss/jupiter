@@ -15,9 +15,10 @@
 package main
 
 import (
+	"aex_jupiter/pkg/server/xgoframe"
+	"aex_jupiter/pkg/xlog"
+
 	"github.com/douyu/jupiter"
-	"github.com/douyu/jupiter/pkg/server/xgoframe"
-	"github.com/douyu/jupiter/pkg/xlog"
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
 )

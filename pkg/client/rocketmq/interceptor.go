@@ -19,13 +19,14 @@ import (
 	"strings"
 	"time"
 
+	"aex_jupiter/pkg/imeta"
+	"aex_jupiter/pkg/istats"
+	"aex_jupiter/pkg/metric"
+	"aex_jupiter/pkg/util/xdebug"
+	"aex_jupiter/pkg/xlog"
+
 	"github.com/apache/rocketmq-client-go/v2/consumer"
 	"github.com/apache/rocketmq-client-go/v2/primitive"
-	"github.com/douyu/jupiter/pkg/imeta"
-	"github.com/douyu/jupiter/pkg/istats"
-	"github.com/douyu/jupiter/pkg/metric"
-	"github.com/douyu/jupiter/pkg/util/xdebug"
-	"github.com/douyu/jupiter/pkg/xlog"
 )
 
 type FlowInfo struct {

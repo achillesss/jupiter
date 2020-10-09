@@ -15,10 +15,11 @@
 package main
 
 import (
-	"github.com/douyu/jupiter"
-	"github.com/douyu/jupiter/pkg/client/redis"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"aex_jupiter/pkg/client/redis"
+	"aex_jupiter/pkg/xlog"
 	"time"
+
+	"github.com/douyu/jupiter"
 )
 
 // run: go run main.go -config=config.toml

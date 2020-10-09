@@ -1,8 +1,8 @@
 package common
 
 import (
+	"aex_jupiter/pkg/util/xregexp"
 	"fmt"
-	"github.com/douyu/jupiter/pkg/util/xregexp"
 	"io/ioutil"
 	"os"
 	"path/filepath"

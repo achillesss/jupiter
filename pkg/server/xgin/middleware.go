@@ -27,9 +27,10 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/douyu/jupiter/pkg/metric"
-	"github.com/douyu/jupiter/pkg/trace"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"aex_jupiter/pkg/metric"
+	"aex_jupiter/pkg/trace"
+	"aex_jupiter/pkg/xlog"
+
 	"go.uber.org/zap"
 )
 

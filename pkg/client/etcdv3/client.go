@@ -18,17 +18,19 @@ import (
 	"context"
 	"crypto/tls"
 	"crypto/x509"
-	"github.com/coreos/etcd/clientv3/concurrency"
 	"io/ioutil"
 	"strings"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/ecode"
+	"go.etcd.io/etcd/clientv3/concurrency"
 
-	"github.com/coreos/etcd/clientv3"
-	"github.com/coreos/etcd/mvcc/mvccpb"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"aex_jupiter/pkg/ecode"
+
+	"aex_jupiter/pkg/xlog"
+
 	grpcprom "github.com/grpc-ecosystem/go-grpc-prometheus"
+	"go.etcd.io/etcd/clientv3"
+	"go.etcd.io/etcd/mvcc/mvccpb"
 	"google.golang.org/grpc"
 )
 

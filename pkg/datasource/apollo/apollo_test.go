@@ -15,13 +15,14 @@
 package apollo
 
 import (
-	"github.com/douyu/jupiter/pkg/datasource/apollo/mockserver"
-	"github.com/philchia/agollo/v4"
-	"github.com/stretchr/testify/assert"
+	"aex_jupiter/pkg/datasource/apollo/mockserver"
 	"log"
 	"sync"
 	"testing"
 	"time"
+
+	"github.com/philchia/agollo/v4"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestMain(m *testing.M) {

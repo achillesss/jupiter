@@ -1,12 +1,13 @@
 package yell
 
 import (
+	"aex_jupiter/pkg/util/xtest/proto/testproto"
 	"context"
 	"errors"
-	"github.com/douyu/jupiter/pkg/util/xtest/proto/testproto"
+	"time"
+
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
-	"time"
 )
 
 // FooServer ...

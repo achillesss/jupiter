@@ -20,8 +20,9 @@ import (
 	"sync"
 	"time"
 
+	"aex_jupiter/pkg/xlog"
+
 	"github.com/codegangsta/inject"
-	"github.com/douyu/jupiter/pkg/xlog"
 )
 
 // Serial 串行

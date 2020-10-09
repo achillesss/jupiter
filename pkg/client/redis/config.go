@@ -19,9 +19,9 @@ import (
 
 	"github.com/go-redis/redis"
 
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/util/xtime"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"aex_jupiter/pkg/conf"
+	"aex_jupiter/pkg/util/xtime"
+	"aex_jupiter/pkg/xlog"
 )
 
 const (

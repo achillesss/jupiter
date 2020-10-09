@@ -17,9 +17,10 @@ package xgoframe
 import (
 	"fmt"
 
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/ecode"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"aex_jupiter/pkg/conf"
+	"aex_jupiter/pkg/ecode"
+	"aex_jupiter/pkg/xlog"
+
 	"github.com/pkg/errors"
 )
 

@@ -15,12 +15,13 @@
 package main
 
 import (
+	"aex_jupiter/pkg/conf"
+	_ "aex_jupiter/pkg/datasource/etcdv3"
+	"aex_jupiter/pkg/xlog"
 	"context"
-	"github.com/coreos/etcd/clientv3"
+
 	"github.com/douyu/jupiter"
-	"github.com/douyu/jupiter/pkg/conf"
-	_ "github.com/douyu/jupiter/pkg/datasource/etcdv3"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"go.etcd.io/etcd/clientv3"
 )
 
 //  go run main.go --config=etcdv3://10.0.101.68:2379?key=test

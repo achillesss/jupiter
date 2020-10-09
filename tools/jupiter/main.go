@@ -15,8 +15,8 @@
 package main
 
 import (
-	"github.com/douyu/jupiter/tools/jupiter/new"
-	"github.com/douyu/jupiter/tools/jupiter/protoc"
+	"aex_jupiter/tools/jupiter/new"
+	"aex_jupiter/tools/jupiter/protoc"
 	"log"
 	"os"
 

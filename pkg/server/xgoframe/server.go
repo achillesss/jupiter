@@ -17,11 +17,13 @@ package xgoframe
 import (
 	"context"
 
-	"github.com/douyu/jupiter/pkg/constant"
-	"github.com/douyu/jupiter/pkg/xlog"
-	//"github.com/douyu/jupiter/pkg/ecode"
-	//"github.com/douyu/jupiter/pkg/xlog"
-	"github.com/douyu/jupiter/pkg/server"
+	"aex_jupiter/pkg/constant"
+	"aex_jupiter/pkg/xlog"
+
+	//"aex_jupiter/pkg/ecode"
+	//"aex_jupiter/pkg/xlog"
+	"aex_jupiter/pkg/server"
+
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
 )

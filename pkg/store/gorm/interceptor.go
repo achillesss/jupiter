@@ -15,15 +15,15 @@
 package gorm
 
 import (
+	"aex_jupiter/pkg/metric"
 	"context"
 	"fmt"
-	"github.com/douyu/jupiter/pkg/metric"
 	"strconv"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/trace"
-	"github.com/douyu/jupiter/pkg/util/xcolor"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"aex_jupiter/pkg/trace"
+	"aex_jupiter/pkg/util/xcolor"
+	"aex_jupiter/pkg/xlog"
 )
 
 // Handler ...

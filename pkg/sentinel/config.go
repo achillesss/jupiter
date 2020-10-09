@@ -18,13 +18,14 @@ import (
 	"encoding/json"
 	"io/ioutil"
 
+	"aex_jupiter/pkg"
+	"aex_jupiter/pkg/conf"
+	"aex_jupiter/pkg/xlog"
+
 	sentinel "github.com/alibaba/sentinel-golang/api"
 	"github.com/alibaba/sentinel-golang/core/base"
 	sentinel_config "github.com/alibaba/sentinel-golang/core/config"
 	"github.com/alibaba/sentinel-golang/core/flow"
-	"github.com/douyu/jupiter/pkg"
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/xlog"
 )
 
 // StdConfig ...

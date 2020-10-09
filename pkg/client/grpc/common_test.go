@@ -1,12 +1,13 @@
 package grpc
 
 import (
-	"github.com/douyu/jupiter/pkg/util/xtest/proto/testproto"
-	"github.com/douyu/jupiter/pkg/util/xtest/server/yell"
-	"google.golang.org/grpc"
+	"aex_jupiter/pkg/util/xtest/proto/testproto"
+	"aex_jupiter/pkg/util/xtest/server/yell"
 	"net"
 	"testing"
 	"time"
+
+	"google.golang.org/grpc"
 )
 
 var directClient testproto.GreeterClient

@@ -18,9 +18,10 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/metric"
-	"github.com/douyu/jupiter/pkg/trace"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"aex_jupiter/pkg/metric"
+	"aex_jupiter/pkg/trace"
+	"aex_jupiter/pkg/xlog"
+
 	"github.com/gogf/gf/net/ghttp"
 	"go.uber.org/zap"
 )

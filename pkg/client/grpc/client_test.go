@@ -1,12 +1,13 @@
 package grpc
 
 import (
+	"aex_jupiter/pkg/util/xtest/proto/testproto"
+	"aex_jupiter/pkg/util/xtest/server/yell"
 	"context"
-	"github.com/douyu/jupiter/pkg/util/xtest/proto/testproto"
-	"github.com/douyu/jupiter/pkg/util/xtest/server/yell"
-	. "github.com/smartystreets/goconvey/convey"
 	"testing"
 	"time"
+
+	. "github.com/smartystreets/goconvey/convey"
 )
 
 // TestBase test direct dial with New()
