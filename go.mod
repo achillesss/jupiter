@@ -1,4 +1,4 @@
-module aex_jupiter
+module AEX_SERVICE/aex_jupiter
 
 go 1.15
 

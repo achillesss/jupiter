@@ -19,17 +19,17 @@ import (
 	"runtime"
 	"time"
 
-	"aex_jupiter/pkg/client/etcdv3"
-	"aex_jupiter/pkg/ecode"
+	"AEX_SERVICE/aex_jupiter/pkg/client/etcdv3"
+	"AEX_SERVICE/aex_jupiter/pkg/ecode"
 
 	"go.etcd.io/etcd/clientv3/concurrency"
 
-	"aex_jupiter/pkg/metric"
+	"AEX_SERVICE/aex_jupiter/pkg/metric"
 
 	"go.uber.org/zap"
 
-	"aex_jupiter/pkg/conf"
-	"aex_jupiter/pkg/xlog"
+	"AEX_SERVICE/aex_jupiter/pkg/conf"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 
 	"github.com/robfig/cron/v3"
 )

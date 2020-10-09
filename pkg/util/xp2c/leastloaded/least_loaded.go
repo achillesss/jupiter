@@ -20,7 +20,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"aex_jupiter/pkg/util/xp2c"
+	"AEX_SERVICE/aex_jupiter/pkg/util/xp2c"
 
 	"google.golang.org/grpc/balancer"
 )

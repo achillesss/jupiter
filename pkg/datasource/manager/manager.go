@@ -4,7 +4,7 @@ import (
 	"errors"
 	"net/url"
 
-	"aex_jupiter/pkg/conf"
+	"AEX_SERVICE/aex_jupiter/pkg/conf"
 )
 
 var (

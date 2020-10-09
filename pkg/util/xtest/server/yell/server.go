@@ -1,7 +1,7 @@
 package yell
 
 import (
-	"aex_jupiter/pkg/util/xtest/proto/testproto"
+	"AEX_SERVICE/aex_jupiter/pkg/util/xtest/proto/testproto"
 	"context"
 	"errors"
 	"time"

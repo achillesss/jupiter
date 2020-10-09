@@ -19,7 +19,7 @@ import (
 	"fmt"
 	"time"
 
-	"aex_jupiter/pkg/trace"
+	"AEX_SERVICE/aex_jupiter/pkg/trace"
 )
 
 func ExampleTraceFunc() {

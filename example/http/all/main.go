@@ -15,10 +15,10 @@
 package main
 
 import (
-	compound_registry "aex_jupiter/pkg/registry/compound"
-	etcdv3_registry "aex_jupiter/pkg/registry/etcdv3"
-	"aex_jupiter/pkg/server/xecho"
-	"aex_jupiter/pkg/xlog"
+	compound_registry "AEX_SERVICE/aex_jupiter/pkg/registry/compound"
+	etcdv3_registry "AEX_SERVICE/aex_jupiter/pkg/registry/etcdv3"
+	"AEX_SERVICE/aex_jupiter/pkg/server/xecho"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 
 	"github.com/douyu/jupiter"
 	"github.com/labstack/echo/v4"

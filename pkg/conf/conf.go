@@ -23,8 +23,8 @@ import (
 	"sync"
 	"time"
 
-	"aex_jupiter/pkg/util/xcast"
-	"aex_jupiter/pkg/util/xmap"
+	"AEX_SERVICE/aex_jupiter/pkg/util/xcast"
+	"AEX_SERVICE/aex_jupiter/pkg/util/xmap"
 
 	"github.com/mitchellh/mapstructure"
 	"github.com/pkg/errors"

@@ -1,9 +1,9 @@
 package gorm
 
 import (
-	"aex_jupiter/pkg/metric"
-	"aex_jupiter/pkg/server/governor"
-	"aex_jupiter/pkg/xlog"
+	"AEX_SERVICE/aex_jupiter/pkg/metric"
+	"AEX_SERVICE/aex_jupiter/pkg/server/governor"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 	"net/http"
 	"time"
 

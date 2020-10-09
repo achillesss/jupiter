@@ -17,9 +17,9 @@ package xgoframe
 import (
 	"fmt"
 
-	"aex_jupiter/pkg/conf"
-	"aex_jupiter/pkg/ecode"
-	"aex_jupiter/pkg/xlog"
+	"AEX_SERVICE/aex_jupiter/pkg/conf"
+	"AEX_SERVICE/aex_jupiter/pkg/ecode"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 
 	"github.com/pkg/errors"
 )

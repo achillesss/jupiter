@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"aex_jupiter/pkg/constant"
+	"AEX_SERVICE/aex_jupiter/pkg/constant"
 )
 
 var (

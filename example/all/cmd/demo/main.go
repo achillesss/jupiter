@@ -17,9 +17,9 @@ package main
 import (
 	"log"
 
-	"aex_jupiter/example/all/internal/app/demo"
-	"aex_jupiter/pkg/registry/compound"
-	"aex_jupiter/pkg/registry/etcdv3"
+	"AEX_SERVICE/aex_jupiter/example/all/internal/app/demo"
+	"AEX_SERVICE/aex_jupiter/pkg/registry/compound"
+	"AEX_SERVICE/aex_jupiter/pkg/registry/etcdv3"
 )
 
 func main() {

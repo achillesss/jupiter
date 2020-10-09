@@ -15,8 +15,8 @@
 package main
 
 import (
-	"aex_jupiter/tools/jupiter/new"
-	"aex_jupiter/tools/jupiter/protoc"
+	"AEX_SERVICE/aex_jupiter/tools/jupiter/new"
+	"AEX_SERVICE/aex_jupiter/tools/jupiter/protoc"
 	"log"
 	"os"
 

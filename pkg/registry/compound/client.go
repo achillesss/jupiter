@@ -17,8 +17,8 @@ package compound
 import (
 	"context"
 
-	registry2 "aex_jupiter/pkg/registry"
-	"aex_jupiter/pkg/server"
+	registry2 "AEX_SERVICE/aex_jupiter/pkg/registry"
+	"AEX_SERVICE/aex_jupiter/pkg/server"
 
 	"golang.org/x/sync/errgroup"
 )

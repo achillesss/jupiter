@@ -1,11 +1,11 @@
 package etcdv3
 
 import (
-	"aex_jupiter/pkg/client/etcdv3"
-	"aex_jupiter/pkg/conf"
-	"aex_jupiter/pkg/datasource/manager"
-	"aex_jupiter/pkg/flag"
-	"aex_jupiter/pkg/xlog"
+	"AEX_SERVICE/aex_jupiter/pkg/client/etcdv3"
+	"AEX_SERVICE/aex_jupiter/pkg/conf"
+	"AEX_SERVICE/aex_jupiter/pkg/datasource/manager"
+	"AEX_SERVICE/aex_jupiter/pkg/flag"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 	"net/url"
 )
 

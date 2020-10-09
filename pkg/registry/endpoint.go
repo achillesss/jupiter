@@ -17,7 +17,7 @@ package registry
 import (
 	"encoding/json"
 
-	"aex_jupiter/pkg/server"
+	"AEX_SERVICE/aex_jupiter/pkg/server"
 )
 
 // Endpoints ...

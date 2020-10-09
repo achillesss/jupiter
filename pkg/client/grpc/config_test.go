@@ -19,7 +19,7 @@ import (
 	"testing"
 	"time"
 
-	"aex_jupiter/pkg/conf"
+	"AEX_SERVICE/aex_jupiter/pkg/conf"
 
 	"github.com/BurntSushi/toml"
 	"github.com/stretchr/testify/assert"

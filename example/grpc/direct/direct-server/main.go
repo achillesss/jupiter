@@ -17,8 +17,8 @@ package main
 import (
 	"context"
 
-	"aex_jupiter/pkg/server/xgrpc"
-	"aex_jupiter/pkg/xlog"
+	"AEX_SERVICE/aex_jupiter/pkg/server/xgrpc"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 
 	"github.com/douyu/jupiter"
 	"google.golang.org/grpc/examples/helloworld/helloworld"

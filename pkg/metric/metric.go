@@ -15,8 +15,8 @@
 package metric
 
 import (
-	"aex_jupiter/pkg"
-	"aex_jupiter/pkg/server/governor"
+	"AEX_SERVICE/aex_jupiter/pkg"
+	"AEX_SERVICE/aex_jupiter/pkg/server/governor"
 	"net/http"
 	"time"
 

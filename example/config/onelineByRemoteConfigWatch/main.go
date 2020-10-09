@@ -17,9 +17,9 @@ package main
 import (
 	"time"
 
-	"aex_jupiter/pkg/conf"
-	"aex_jupiter/pkg/server/xecho"
-	"aex_jupiter/pkg/xlog"
+	"AEX_SERVICE/aex_jupiter/pkg/conf"
+	"AEX_SERVICE/aex_jupiter/pkg/server/xecho"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 
 	"github.com/douyu/jupiter"
 )

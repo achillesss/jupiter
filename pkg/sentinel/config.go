@@ -18,9 +18,9 @@ import (
 	"encoding/json"
 	"io/ioutil"
 
-	"aex_jupiter/pkg"
-	"aex_jupiter/pkg/conf"
-	"aex_jupiter/pkg/xlog"
+	"AEX_SERVICE/aex_jupiter/pkg"
+	"AEX_SERVICE/aex_jupiter/pkg/conf"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 
 	sentinel "github.com/alibaba/sentinel-golang/api"
 	"github.com/alibaba/sentinel-golang/core/base"

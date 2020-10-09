@@ -1,7 +1,7 @@
 package xgrpclog
 
 import (
-	"aex_jupiter/pkg/xlog"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 	"fmt"
 
 	"google.golang.org/grpc/grpclog"

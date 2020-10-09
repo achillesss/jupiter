@@ -17,11 +17,11 @@ package xecho
 import (
 	"fmt"
 
-	"aex_jupiter/pkg/conf"
-	"aex_jupiter/pkg/constant"
-	"aex_jupiter/pkg/ecode"
-	"aex_jupiter/pkg/flag"
-	"aex_jupiter/pkg/xlog"
+	"AEX_SERVICE/aex_jupiter/pkg/conf"
+	"AEX_SERVICE/aex_jupiter/pkg/constant"
+	"AEX_SERVICE/aex_jupiter/pkg/ecode"
+	"AEX_SERVICE/aex_jupiter/pkg/flag"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 
 	"github.com/pkg/errors"
 )

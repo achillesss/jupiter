@@ -1,8 +1,8 @@
 package grpc
 
 import (
-	"aex_jupiter/pkg/util/xtest/proto/testproto"
-	"aex_jupiter/pkg/util/xtest/server/yell"
+	"AEX_SERVICE/aex_jupiter/pkg/util/xtest/proto/testproto"
+	"AEX_SERVICE/aex_jupiter/pkg/util/xtest/server/yell"
 	"context"
 	"testing"
 	"time"

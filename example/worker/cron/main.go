@@ -15,8 +15,8 @@
 package main
 
 import (
-	"aex_jupiter/pkg/worker/xcron"
-	"aex_jupiter/pkg/xlog"
+	"AEX_SERVICE/aex_jupiter/pkg/worker/xcron"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 	"fmt"
 	"time"
 

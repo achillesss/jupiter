@@ -20,12 +20,12 @@ import (
 	"os"
 	"sync"
 
-	"aex_jupiter/pkg/util/xcolor"
-	"aex_jupiter/pkg/util/xstring"
+	"AEX_SERVICE/aex_jupiter/pkg/util/xcolor"
+	"AEX_SERVICE/aex_jupiter/pkg/util/xstring"
 
 	"github.com/tidwall/pretty"
 
-	"aex_jupiter/pkg/xlog"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 )
 
 var (

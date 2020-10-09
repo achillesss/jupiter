@@ -1,7 +1,7 @@
 package job
 
 import (
-	"aex_jupiter/pkg/flag"
+	"AEX_SERVICE/aex_jupiter/pkg/flag"
 )
 
 func init() {

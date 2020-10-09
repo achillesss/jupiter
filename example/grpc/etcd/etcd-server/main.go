@@ -15,10 +15,10 @@
 package main
 
 import (
-	compound_registry "aex_jupiter/pkg/registry/compound"
-	etcdv3_registry "aex_jupiter/pkg/registry/etcdv3"
-	"aex_jupiter/pkg/server/xgrpc"
-	"aex_jupiter/pkg/xlog"
+	compound_registry "AEX_SERVICE/aex_jupiter/pkg/registry/compound"
+	etcdv3_registry "AEX_SERVICE/aex_jupiter/pkg/registry/etcdv3"
+	"AEX_SERVICE/aex_jupiter/pkg/server/xgrpc"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 	"context"
 
 	"github.com/douyu/jupiter"

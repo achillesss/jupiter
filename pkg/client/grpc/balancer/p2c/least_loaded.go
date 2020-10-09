@@ -17,8 +17,8 @@ package p2c
 import (
 	"context"
 
-	"aex_jupiter/pkg/util/xp2c"
-	"aex_jupiter/pkg/util/xp2c/leastloaded"
+	"AEX_SERVICE/aex_jupiter/pkg/util/xp2c"
+	"AEX_SERVICE/aex_jupiter/pkg/util/xp2c/leastloaded"
 
 	"google.golang.org/grpc/balancer"
 	"google.golang.org/grpc/balancer/base"

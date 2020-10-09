@@ -17,11 +17,11 @@ package xgrpc
 import (
 	"fmt"
 
-	"aex_jupiter/pkg/constant"
-	"aex_jupiter/pkg/ecode"
-	"aex_jupiter/pkg/xlog"
+	"AEX_SERVICE/aex_jupiter/pkg/constant"
+	"AEX_SERVICE/aex_jupiter/pkg/ecode"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 
-	"aex_jupiter/pkg/conf"
+	"AEX_SERVICE/aex_jupiter/pkg/conf"
 
 	"google.golang.org/grpc"
 )

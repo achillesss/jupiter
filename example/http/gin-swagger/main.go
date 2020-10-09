@@ -15,13 +15,13 @@
 package main
 
 import (
-	_ "aex_jupiter/example/http/gin-swagger/docs"
-	"aex_jupiter/pkg/server/xgin"
-	"aex_jupiter/pkg/xlog"
+	_ "AEX_SERVICE/aex_jupiter/example/http/gin-swagger/docs"
+	"AEX_SERVICE/aex_jupiter/pkg/server/xgin"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 
 	"github.com/douyu/jupiter"
 	"github.com/gin-gonic/gin"
-	"github.com/swaggo/gin-swagger"
+	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
 )
 

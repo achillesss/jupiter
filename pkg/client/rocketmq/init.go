@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"sync"
 
-	"aex_jupiter/pkg/application"
+	"AEX_SERVICE/aex_jupiter/pkg/application"
 
 	jsoniter "github.com/json-iterator/go"
 )

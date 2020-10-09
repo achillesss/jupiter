@@ -27,9 +27,9 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"aex_jupiter/pkg/metric"
-	"aex_jupiter/pkg/trace"
-	"aex_jupiter/pkg/xlog"
+	"AEX_SERVICE/aex_jupiter/pkg/metric"
+	"AEX_SERVICE/aex_jupiter/pkg/trace"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 
 	"go.uber.org/zap"
 )

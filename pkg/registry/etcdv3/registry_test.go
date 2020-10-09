@@ -15,16 +15,16 @@
 package etcdv3
 
 import (
-	"aex_jupiter/pkg/constant"
+	"AEX_SERVICE/aex_jupiter/pkg/constant"
 	"context"
 	"fmt"
 	"testing"
 	"time"
 
-	"aex_jupiter/pkg/client/etcdv3"
-	"aex_jupiter/pkg/registry"
-	"aex_jupiter/pkg/server"
-	"aex_jupiter/pkg/xlog"
+	"AEX_SERVICE/aex_jupiter/pkg/client/etcdv3"
+	"AEX_SERVICE/aex_jupiter/pkg/registry"
+	"AEX_SERVICE/aex_jupiter/pkg/server"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 
 	"github.com/stretchr/testify/assert"
 )

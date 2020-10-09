@@ -15,7 +15,7 @@
 package apollo
 
 import (
-	"aex_jupiter/pkg/datasource/apollo/mockserver"
+	"AEX_SERVICE/aex_jupiter/pkg/datasource/apollo/mockserver"
 	"log"
 	"sync"
 	"testing"

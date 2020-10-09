@@ -15,8 +15,8 @@
 package main
 
 import (
-	"aex_jupiter/pkg/server/xecho"
-	"aex_jupiter/pkg/xlog"
+	"AEX_SERVICE/aex_jupiter/pkg/server/xecho"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 
 	"github.com/douyu/jupiter"
 	"github.com/labstack/echo/v4"

@@ -17,8 +17,8 @@ package main
 import (
 	"log"
 
-	"aex_jupiter/pkg/server/xgin"
-	"aex_jupiter/pkg/xlog"
+	"AEX_SERVICE/aex_jupiter/pkg/server/xgin"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 
 	"github.com/douyu/jupiter"
 	"github.com/gin-gonic/gin"

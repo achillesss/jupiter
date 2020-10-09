@@ -15,19 +15,19 @@
 package grpc
 
 import (
-	"aex_jupiter/pkg"
-	"aex_jupiter/pkg/xlog"
+	"AEX_SERVICE/aex_jupiter/pkg"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 	"context"
 	"encoding/json"
 	"errors"
 	"fmt"
 	"time"
 
-	"aex_jupiter/pkg/ecode"
-	"aex_jupiter/pkg/metric"
-	"aex_jupiter/pkg/trace"
-	"aex_jupiter/pkg/util/xcolor"
-	"aex_jupiter/pkg/util/xstring"
+	"AEX_SERVICE/aex_jupiter/pkg/ecode"
+	"AEX_SERVICE/aex_jupiter/pkg/metric"
+	"AEX_SERVICE/aex_jupiter/pkg/trace"
+	"AEX_SERVICE/aex_jupiter/pkg/util/xcolor"
+	"AEX_SERVICE/aex_jupiter/pkg/util/xstring"
 
 	"github.com/opentracing/opentracing-go/ext"
 	"google.golang.org/grpc"

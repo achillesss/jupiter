@@ -19,8 +19,8 @@ import (
 	"fmt"
 	"strconv"
 
-	"aex_jupiter/pkg/client/rocketmq"
-	"aex_jupiter/pkg/xlog"
+	"AEX_SERVICE/aex_jupiter/pkg/client/rocketmq"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 
 	"github.com/apache/rocketmq-client-go/v2/primitive"
 	"github.com/douyu/jupiter"

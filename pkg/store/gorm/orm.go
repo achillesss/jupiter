@@ -15,7 +15,7 @@
 package gorm
 
 import (
-	"aex_jupiter/pkg/util/xdebug"
+	"AEX_SERVICE/aex_jupiter/pkg/util/xdebug"
 	"context"
 	"errors"
 

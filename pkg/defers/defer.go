@@ -15,7 +15,7 @@
 package defers
 
 import (
-	"aex_jupiter/pkg/util/xdefer"
+	"AEX_SERVICE/aex_jupiter/pkg/util/xdefer"
 )
 
 var (

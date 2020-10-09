@@ -17,13 +17,13 @@ package demo
 import (
 	"time"
 
-	"aex_jupiter/example/all/internal/app/greeter"
-	"aex_jupiter/pkg/sentinel"
-	"aex_jupiter/pkg/server/xecho"
-	"aex_jupiter/pkg/server/xgrpc"
-	"aex_jupiter/pkg/util/xgo"
-	"aex_jupiter/pkg/worker/xcron"
-	"aex_jupiter/pkg/xlog"
+	"AEX_SERVICE/aex_jupiter/example/all/internal/app/greeter"
+	"AEX_SERVICE/aex_jupiter/pkg/sentinel"
+	"AEX_SERVICE/aex_jupiter/pkg/server/xecho"
+	"AEX_SERVICE/aex_jupiter/pkg/server/xgrpc"
+	"AEX_SERVICE/aex_jupiter/pkg/util/xgo"
+	"AEX_SERVICE/aex_jupiter/pkg/worker/xcron"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 
 	sentinel_echo "github.com/alibaba/sentinel-golang/adapter/echo"
 	"github.com/alibaba/sentinel-golang/core/flow"

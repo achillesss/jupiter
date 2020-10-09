@@ -17,12 +17,12 @@ package xgoframe
 import (
 	"context"
 
-	"aex_jupiter/pkg/constant"
-	"aex_jupiter/pkg/xlog"
+	"AEX_SERVICE/aex_jupiter/pkg/constant"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 
-	//"aex_jupiter/pkg/ecode"
-	//"aex_jupiter/pkg/xlog"
-	"aex_jupiter/pkg/server"
+	//"AEX_SERVICE/aex_jupiter/pkg/ecode"
+	//"AEX_SERVICE/aex_jupiter/pkg/xlog"
+	"AEX_SERVICE/aex_jupiter/pkg/server"
 
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"

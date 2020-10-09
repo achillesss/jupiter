@@ -17,7 +17,7 @@ package xlog_test
 import (
 	"testing"
 
-	"aex_jupiter/pkg/xlog"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 )
 
 func Test_Info(t *testing.T) {

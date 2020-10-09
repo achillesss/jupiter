@@ -3,8 +3,8 @@ package mongox
 import (
 	"time"
 
-	"aex_jupiter/pkg/conf"
-	"aex_jupiter/pkg/util/xtime"
+	"AEX_SERVICE/aex_jupiter/pkg/conf"
+	"AEX_SERVICE/aex_jupiter/pkg/util/xtime"
 
 	"go.mongodb.org/mongo-driver/mongo"
 )

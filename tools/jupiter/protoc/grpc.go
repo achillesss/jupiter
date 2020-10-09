@@ -1,7 +1,7 @@
 package protoc
 
 import (
-	"aex_jupiter/pkg/util/xcolor"
+	"AEX_SERVICE/aex_jupiter/pkg/util/xcolor"
 	"errors"
 	"fmt"
 	"os"

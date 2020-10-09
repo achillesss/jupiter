@@ -15,8 +15,8 @@
 package governor
 
 import (
-	"aex_jupiter/pkg"
-	"aex_jupiter/pkg/conf"
+	"AEX_SERVICE/aex_jupiter/pkg"
+	"AEX_SERVICE/aex_jupiter/pkg/conf"
 	"encoding/json"
 	"net/http"
 	"os"

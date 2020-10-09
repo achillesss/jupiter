@@ -5,4 +5,4 @@
 // and any other packr generated files.
 package new
 
-import _ "aex_jupiter/tools/jupiter/new/packrd"
+import _ "AEX_SERVICE/aex_jupiter/tools/jupiter/new/packrd"

@@ -15,8 +15,8 @@
 package main
 
 import (
-	"aex_jupiter/pkg/client/redis"
-	"aex_jupiter/pkg/xlog"
+	"AEX_SERVICE/aex_jupiter/pkg/client/redis"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 	"time"
 
 	"github.com/douyu/jupiter"

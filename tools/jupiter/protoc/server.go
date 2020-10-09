@@ -1,8 +1,8 @@
 package protoc
 
 import (
-	"aex_jupiter/pkg/util/xcolor"
-	template2 "aex_jupiter/tools/jupiter/protoc/template"
+	"AEX_SERVICE/aex_jupiter/pkg/util/xcolor"
+	template2 "AEX_SERVICE/aex_jupiter/tools/jupiter/protoc/template"
 	"fmt"
 	"html/template"
 	"os"

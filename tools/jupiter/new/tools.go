@@ -15,8 +15,8 @@
 package new
 
 import (
-	"aex_jupiter/pkg/util/xcolor"
-	"aex_jupiter/tools/jupiter/common"
+	"AEX_SERVICE/aex_jupiter/pkg/util/xcolor"
+	"AEX_SERVICE/aex_jupiter/tools/jupiter/common"
 	"bytes"
 	"fmt"
 	"io/ioutil"

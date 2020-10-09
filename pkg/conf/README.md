@@ -13,7 +13,7 @@ if err := conf.Load(bytes.NewBufferString(content), toml.Unmarshal); err != nil 
 
 ```golang
 import (
-    file_datasource "aex_jupiter/pkg/datasource/file"
+    file_datasource "AEX_SERVICE/aex_jupiter/pkg/datasource/file"
 )
 
 provider := file_datasource.NewDataSource(path)
@@ -26,8 +26,8 @@ if err := conf.Load(provider, toml.Unmarshal); err != nil {
 
 ```golang
 import (
-   etcdv3_datasource "aex_jupiter/pkg/datasource/etcdv3"
-   "aex_jupiter/client/etcdv3"
+   etcdv3_datasource "AEX_SERVICE/aex_jupiter/pkg/datasource/etcdv3"
+   "AEX_SERVICE/aex_jupiter/client/etcdv3"
 )
 provider := etcdv3_datasource.NewDataSource(
     etcdv3.StdConfig("config_datasource").Build(),

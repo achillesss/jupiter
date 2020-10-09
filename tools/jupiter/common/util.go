@@ -1,7 +1,7 @@
 package common
 
 import (
-	"aex_jupiter/pkg/util/xregexp"
+	"AEX_SERVICE/aex_jupiter/pkg/util/xregexp"
 	"fmt"
 	"io/ioutil"
 	"os"

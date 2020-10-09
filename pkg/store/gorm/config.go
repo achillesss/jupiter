@@ -15,14 +15,14 @@
 package gorm
 
 import (
-	"aex_jupiter/pkg/metric"
+	"AEX_SERVICE/aex_jupiter/pkg/metric"
 	"time"
 
-	"aex_jupiter/pkg/ecode"
+	"AEX_SERVICE/aex_jupiter/pkg/ecode"
 
-	"aex_jupiter/pkg/conf"
-	"aex_jupiter/pkg/util/xtime"
-	"aex_jupiter/pkg/xlog"
+	"AEX_SERVICE/aex_jupiter/pkg/conf"
+	"AEX_SERVICE/aex_jupiter/pkg/util/xtime"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 )
 
 // StdConfig 标准配置，规范配置文件头

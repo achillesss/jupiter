@@ -20,10 +20,10 @@ import (
 	"runtime"
 	"time"
 
-	"aex_jupiter/pkg/metric"
-	"aex_jupiter/pkg/trace"
+	"AEX_SERVICE/aex_jupiter/pkg/metric"
+	"AEX_SERVICE/aex_jupiter/pkg/trace"
 
-	"aex_jupiter/pkg/xlog"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 
 	"github.com/labstack/echo/v4"
 	"go.uber.org/zap"

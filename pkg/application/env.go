@@ -3,7 +3,7 @@ package application
 import (
 	"os"
 
-	"aex_jupiter/pkg/flag"
+	"AEX_SERVICE/aex_jupiter/pkg/flag"
 )
 
 var (

@@ -19,11 +19,11 @@ import (
 	"strings"
 	"time"
 
-	"aex_jupiter/pkg/imeta"
-	"aex_jupiter/pkg/istats"
-	"aex_jupiter/pkg/metric"
-	"aex_jupiter/pkg/util/xdebug"
-	"aex_jupiter/pkg/xlog"
+	"AEX_SERVICE/aex_jupiter/pkg/imeta"
+	"AEX_SERVICE/aex_jupiter/pkg/istats"
+	"AEX_SERVICE/aex_jupiter/pkg/metric"
+	"AEX_SERVICE/aex_jupiter/pkg/util/xdebug"
+	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 
 	"github.com/apache/rocketmq-client-go/v2/consumer"
 	"github.com/apache/rocketmq-client-go/v2/primitive"

@@ -21,7 +21,7 @@ import (
 	"sync"
 	"time"
 
-	"aex_jupiter/pkg/util/xcast"
+	"AEX_SERVICE/aex_jupiter/pkg/util/xcast"
 
 	"github.com/mitchellh/mapstructure"
 )
