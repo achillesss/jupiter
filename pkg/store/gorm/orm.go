@@ -15,9 +15,10 @@
 package gorm
 
 import (
-	"AEX_SERVICE/aex_jupiter/pkg/util/xdebug"
 	"context"
 	"errors"
+
+	"github.com/douyu/jupiter/pkg/util/xdebug"
 
 	"github.com/jinzhu/gorm"
 	// mysql driver

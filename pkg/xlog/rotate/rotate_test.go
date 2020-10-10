@@ -22,7 +22,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	"AEX_SERVICE/aex_jupiter/pkg/xlog/rotate"
+	"github.com/douyu/jupiter/pkg/xlog/rotate"
 )
 
 // Example of how to rotate in response to SIGHUP.

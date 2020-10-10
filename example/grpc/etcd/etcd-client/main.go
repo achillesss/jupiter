@@ -19,11 +19,11 @@ import (
 	"fmt"
 	"time"
 
-	"AEX_SERVICE/aex_jupiter/pkg/client/grpc"
-	"AEX_SERVICE/aex_jupiter/pkg/client/grpc/balancer"
-	"AEX_SERVICE/aex_jupiter/pkg/client/grpc/resolver"
-	"AEX_SERVICE/aex_jupiter/pkg/registry/etcdv3"
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
+	"github.com/douyu/jupiter/pkg/client/grpc"
+	"github.com/douyu/jupiter/pkg/client/grpc/balancer"
+	"github.com/douyu/jupiter/pkg/client/grpc/resolver"
+	"github.com/douyu/jupiter/pkg/registry/etcdv3"
+	"github.com/douyu/jupiter/pkg/xlog"
 
 	"github.com/douyu/jupiter"
 	"google.golang.org/grpc/examples/helloworld/helloworld"

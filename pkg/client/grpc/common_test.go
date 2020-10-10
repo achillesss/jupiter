@@ -1,11 +1,12 @@
 package grpc
 
 import (
-	"AEX_SERVICE/aex_jupiter/pkg/util/xtest/proto/testproto"
-	"AEX_SERVICE/aex_jupiter/pkg/util/xtest/server/yell"
 	"net"
 	"testing"
 	"time"
+
+	"github.com/douyu/jupiter/pkg/util/xtest/proto/testproto"
+	"github.com/douyu/jupiter/pkg/util/xtest/server/yell"
 
 	"google.golang.org/grpc"
 )

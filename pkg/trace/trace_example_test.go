@@ -19,7 +19,7 @@ import (
 	"fmt"
 	"time"
 
-	"AEX_SERVICE/aex_jupiter/pkg/trace"
+	"github.com/douyu/jupiter/pkg/trace"
 )
 
 func ExampleTraceFunc() {

@@ -20,9 +20,9 @@ import (
 	"log"
 	"time"
 
-	"AEX_SERVICE/aex_jupiter/pkg/server/xecho"
-	"AEX_SERVICE/aex_jupiter/pkg/store/mongox"
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
+	"github.com/douyu/jupiter/pkg/server/xecho"
+	"github.com/douyu/jupiter/pkg/store/mongox"
+	"github.com/douyu/jupiter/pkg/xlog"
 
 	"github.com/douyu/jupiter"
 	"github.com/labstack/echo/v4"

@@ -1,12 +1,13 @@
 package common
 
 import (
-	"AEX_SERVICE/aex_jupiter/pkg/util/xregexp"
 	"fmt"
 	"io/ioutil"
 	"os"
 	"path/filepath"
 	"strings"
+
+	"github.com/douyu/jupiter/pkg/util/xregexp"
 )
 
 // GetModPath ...

@@ -15,11 +15,12 @@
 package apollo
 
 import (
-	"AEX_SERVICE/aex_jupiter/pkg/datasource/apollo/mockserver"
 	"log"
 	"sync"
 	"testing"
 	"time"
+
+	"github.com/douyu/jupiter/pkg/datasource/apollo/mockserver"
 
 	"github.com/philchia/agollo/v4"
 	"github.com/stretchr/testify/assert"

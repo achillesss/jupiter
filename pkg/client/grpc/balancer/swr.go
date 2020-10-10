@@ -19,9 +19,9 @@ import (
 	"fmt"
 	"sync"
 
-	"AEX_SERVICE/aex_jupiter/pkg/constant"
-	"AEX_SERVICE/aex_jupiter/pkg/registry"
-	"AEX_SERVICE/aex_jupiter/pkg/server"
+	"github.com/douyu/jupiter/pkg/constant"
+	"github.com/douyu/jupiter/pkg/registry"
+	"github.com/douyu/jupiter/pkg/server"
 
 	"github.com/smallnest/weighted"
 	"google.golang.org/grpc/attributes"

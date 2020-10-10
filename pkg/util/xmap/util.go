@@ -19,7 +19,7 @@ import (
 	"reflect"
 	"strings"
 
-	"AEX_SERVICE/aex_jupiter/pkg/util/xcast"
+	"github.com/douyu/jupiter/pkg/util/xcast"
 )
 
 // MergeStringMap merge two map

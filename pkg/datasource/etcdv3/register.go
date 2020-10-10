@@ -1,12 +1,13 @@
 package etcdv3
 
 import (
-	"AEX_SERVICE/aex_jupiter/pkg/client/etcdv3"
-	"AEX_SERVICE/aex_jupiter/pkg/conf"
-	"AEX_SERVICE/aex_jupiter/pkg/datasource/manager"
-	"AEX_SERVICE/aex_jupiter/pkg/flag"
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 	"net/url"
+
+	"github.com/douyu/jupiter/pkg/client/etcdv3"
+	"github.com/douyu/jupiter/pkg/conf"
+	"github.com/douyu/jupiter/pkg/datasource/manager"
+	"github.com/douyu/jupiter/pkg/flag"
+	"github.com/douyu/jupiter/pkg/xlog"
 )
 
 // DataSourceEtcdv3 defines etcdv3 scheme

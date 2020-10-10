@@ -17,7 +17,7 @@ package xlog
 import (
 	"io"
 
-	"AEX_SERVICE/aex_jupiter/pkg/xlog/rotate"
+	"github.com/douyu/jupiter/pkg/xlog/rotate"
 )
 
 func newRotate(config *Config) io.Writer {

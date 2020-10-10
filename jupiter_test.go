@@ -21,11 +21,11 @@ import (
 	"testing"
 	"time"
 
-	"AEX_SERVICE/aex_jupiter/pkg/server/xgrpc"
+	"github.com/douyu/jupiter/pkg/server/xgrpc"
 
 	"github.com/stretchr/testify/assert"
 
-	"AEX_SERVICE/aex_jupiter/pkg/server"
+	"github.com/douyu/jupiter/pkg/server"
 
 	. "github.com/smartystreets/goconvey/convey"
 )

@@ -20,10 +20,10 @@ import (
 
 	"net"
 
-	"AEX_SERVICE/aex_jupiter/pkg/constant"
-	"AEX_SERVICE/aex_jupiter/pkg/ecode"
-	"AEX_SERVICE/aex_jupiter/pkg/server"
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
+	"github.com/douyu/jupiter/pkg/constant"
+	"github.com/douyu/jupiter/pkg/ecode"
+	"github.com/douyu/jupiter/pkg/server"
+	"github.com/douyu/jupiter/pkg/xlog"
 
 	"github.com/gin-gonic/gin"
 )

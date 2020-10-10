@@ -17,7 +17,7 @@ package leastloaded_test
 import (
 	"testing"
 
-	"AEX_SERVICE/aex_jupiter/pkg/util/xp2c/leastloaded"
+	"github.com/douyu/jupiter/pkg/util/xp2c/leastloaded"
 
 	"github.com/stretchr/testify/assert"
 	"google.golang.org/grpc/balancer"

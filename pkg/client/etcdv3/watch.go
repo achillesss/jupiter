@@ -18,9 +18,9 @@ import (
 	"context"
 	"sync"
 
-	"AEX_SERVICE/aex_jupiter/pkg/ecode"
-	"AEX_SERVICE/aex_jupiter/pkg/util/xgo"
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
+	"github.com/douyu/jupiter/pkg/ecode"
+	"github.com/douyu/jupiter/pkg/util/xgo"
+	"github.com/douyu/jupiter/pkg/xlog"
 
 	"go.etcd.io/etcd/clientv3"
 	"go.etcd.io/etcd/mvcc/mvccpb"

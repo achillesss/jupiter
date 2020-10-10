@@ -1,8 +1,9 @@
 package main
 
 import (
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 	"fmt"
+
+	"github.com/douyu/jupiter/pkg/xlog"
 
 	"github.com/douyu/jupiter"
 )

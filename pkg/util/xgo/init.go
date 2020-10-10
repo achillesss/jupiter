@@ -18,8 +18,8 @@ import (
 	"fmt"
 	"runtime"
 
-	"AEX_SERVICE/aex_jupiter/pkg/util/xstring"
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
+	"github.com/douyu/jupiter/pkg/util/xstring"
+	"github.com/douyu/jupiter/pkg/xlog"
 
 	"github.com/pkg/errors"
 	"go.uber.org/zap"

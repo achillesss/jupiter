@@ -20,7 +20,7 @@ linux :
 export GO111MODULE=on
 export GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
 ```
-`go get -u -v AEX_SERVICE/aex_jupiter/tools/jupiter`
+`go get -u -v github.com/douyu/jupiter/tools/jupiter`
 * windows 用户:  
   会在${GOPATH}/src/bin 目录下生成jupiter.exe 文件,若想方便的在任何地方使用jupiter命令,请将该
   命令配置在系统的环境变量中
@@ -165,19 +165,19 @@ E:\go\goworkspace\src\jupiter-demo\cmd>go run main.go --config=../config/config.
 1592274902      INFO    set global tracer                       {"mod": "trace"}
 1592274902      INFO    add job                                 {"mod": "worker.cron", "name": "jupiter-demo/internal/app/engine.(*Engine).execJob-fm"}
 
-?[33m[2020-06-16 10:35:02]?[0m ?[35m[info] replacing callback `gorm:delete` from E:/go/goworkspace/src/jupiter-demo/vendor/AEX_SERVICE/aex_jupiter/pkg/store/gorm/orm.go:118?[0m ?[31;1m
+?[33m[2020-06-16 10:35:02]?[0m ?[35m[info] replacing callback `gorm:delete` from E:/go/goworkspace/src/jupiter-demo/vendor/github.com/douyu/jupiter/pkg/store/gorm/orm.go:118?[0m ?[31;1m
 ?[0m
 
-?[33m[2020-06-16 10:35:02]?[0m ?[35m[info] replacing callback `gorm:update` from E:/go/goworkspace/src/jupiter-demo/vendor/AEX_SERVICE/aex_jupiter/pkg/store/gorm/orm.go:118?[0m ?[31;1m
+?[33m[2020-06-16 10:35:02]?[0m ?[35m[info] replacing callback `gorm:update` from E:/go/goworkspace/src/jupiter-demo/vendor/github.com/douyu/jupiter/pkg/store/gorm/orm.go:118?[0m ?[31;1m
 ?[0m
 
-?[33m[2020-06-16 10:35:02]?[0m ?[35m[info] replacing callback `gorm:create` from E:/go/goworkspace/src/jupiter-demo/vendor/AEX_SERVICE/aex_jupiter/pkg/store/gorm/orm.go:118?[0m ?[31;1m
+?[33m[2020-06-16 10:35:02]?[0m ?[35m[info] replacing callback `gorm:create` from E:/go/goworkspace/src/jupiter-demo/vendor/github.com/douyu/jupiter/pkg/store/gorm/orm.go:118?[0m ?[31;1m
 ?[0m
 
-?[33m[2020-06-16 10:35:02]?[0m ?[35m[info] replacing callback `gorm:query` from E:/go/goworkspace/src/jupiter-demo/vendor/AEX_SERVICE/aex_jupiter/pkg/store/gorm/orm.go:118?[0m ?[31;1m ?
+?[33m[2020-06-16 10:35:02]?[0m ?[35m[info] replacing callback `gorm:query` from E:/go/goworkspace/src/jupiter-demo/vendor/github.com/douyu/jupiter/pkg/store/gorm/orm.go:118?[0m ?[31;1m ?
 [0m
 
-?[33m[2020-06-16 10:35:02]?[0m ?[35m[info] replacing callback `gorm:row_query` from E:/go/goworkspace/src/jupiter-demo/vendor/AEX_SERVICE/aex_jupiter/pkg/store/gorm/orm.go:118?[0m ?[31;
+?[33m[2020-06-16 10:35:02]?[0m ?[35m[info] replacing callback `gorm:row_query` from E:/go/goworkspace/src/jupiter-demo/vendor/github.com/douyu/jupiter/pkg/store/gorm/orm.go:118?[0m ?[31;
 1m ?[0m
 1592274902      INFO    client mysql start                      {"mod": "gorm", "addr": "127.0.0.1:3306", "name": "test"}
 1592274902      INFO    run worker                              {"mod": "worker.cron", "number of scheduled jobs": 1}

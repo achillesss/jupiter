@@ -15,12 +15,13 @@
 package grpc
 
 import (
-	"AEX_SERVICE/aex_jupiter/pkg/util/xtime"
 	"time"
 
-	"AEX_SERVICE/aex_jupiter/pkg/conf"
-	"AEX_SERVICE/aex_jupiter/pkg/ecode"
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
+	"github.com/douyu/jupiter/pkg/util/xtime"
+
+	"github.com/douyu/jupiter/pkg/conf"
+	"github.com/douyu/jupiter/pkg/ecode"
+	"github.com/douyu/jupiter/pkg/xlog"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/balancer/roundrobin"

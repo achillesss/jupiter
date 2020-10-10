@@ -18,8 +18,8 @@ import (
 	"context"
 	"time"
 
-	"AEX_SERVICE/aex_jupiter/pkg/client/etcdv3"
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
+	"github.com/douyu/jupiter/pkg/client/etcdv3"
+	"github.com/douyu/jupiter/pkg/xlog"
 
 	"github.com/douyu/jupiter"
 	"go.etcd.io/etcd/clientv3"

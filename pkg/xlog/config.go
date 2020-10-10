@@ -18,7 +18,7 @@ import (
 	"fmt"
 	"time"
 
-	"AEX_SERVICE/aex_jupiter/pkg/conf"
+	"github.com/douyu/jupiter/pkg/conf"
 
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"

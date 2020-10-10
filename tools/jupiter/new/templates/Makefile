@@ -4,7 +4,7 @@ BASE_PATH:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 BUILD_PATH:=$(BASE_PATH)/build
 TITLE:=$(shell basename $(BASE_PATH))
 BUILD_TIME:=$(shell date +%Y-%m-%d--%T)
-JUPITER:=AEX_SERVICE/aex_jupiter
+JUPITER:=github.com/douyu/jupiter
 
 all:print fmt lint buildDemo
 alltar:print fmt lint buildDemo

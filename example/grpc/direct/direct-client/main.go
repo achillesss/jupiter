@@ -15,12 +15,13 @@
 package main
 
 import (
-	"AEX_SERVICE/aex_jupiter/pkg/xgrpclog"
 	"context"
 	"time"
 
-	"AEX_SERVICE/aex_jupiter/pkg/client/grpc"
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
+	"github.com/douyu/jupiter/pkg/xgrpclog"
+
+	"github.com/douyu/jupiter/pkg/client/grpc"
+	"github.com/douyu/jupiter/pkg/xlog"
 
 	"github.com/douyu/jupiter"
 	"google.golang.org/grpc/examples/helloworld/helloworld"

@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"AEX_SERVICE/aex_jupiter/pkg/conf"
+	"github.com/douyu/jupiter/pkg/conf"
 
 	"github.com/BurntSushi/toml"
 )

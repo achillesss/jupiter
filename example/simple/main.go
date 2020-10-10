@@ -17,10 +17,10 @@ package main
 import (
 	"log"
 
-	compound_registry "AEX_SERVICE/aex_jupiter/pkg/registry/compound"
-	etcdv3_registry "AEX_SERVICE/aex_jupiter/pkg/registry/etcdv3"
-	"AEX_SERVICE/aex_jupiter/pkg/server"
-	"AEX_SERVICE/aex_jupiter/pkg/server/xgin"
+	compound_registry "github.com/douyu/jupiter/pkg/registry/compound"
+	etcdv3_registry "github.com/douyu/jupiter/pkg/registry/etcdv3"
+	"github.com/douyu/jupiter/pkg/server"
+	"github.com/douyu/jupiter/pkg/server/xgin"
 
 	"github.com/douyu/jupiter"
 	"github.com/gin-gonic/gin"

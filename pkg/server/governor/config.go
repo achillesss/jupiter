@@ -3,9 +3,9 @@ package governor
 import (
 	"fmt"
 
-	"AEX_SERVICE/aex_jupiter/pkg/conf"
-	"AEX_SERVICE/aex_jupiter/pkg/util/xnet"
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
+	"github.com/douyu/jupiter/pkg/conf"
+	"github.com/douyu/jupiter/pkg/util/xnet"
+	"github.com/douyu/jupiter/pkg/xlog"
 )
 
 //ModName ..

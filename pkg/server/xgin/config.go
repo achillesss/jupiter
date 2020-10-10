@@ -17,9 +17,9 @@ package xgin
 import (
 	"fmt"
 
-	"AEX_SERVICE/aex_jupiter/pkg/conf"
-	"AEX_SERVICE/aex_jupiter/pkg/ecode"
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
+	"github.com/douyu/jupiter/pkg/conf"
+	"github.com/douyu/jupiter/pkg/ecode"
+	"github.com/douyu/jupiter/pkg/xlog"
 
 	"github.com/gin-gonic/gin"
 	"github.com/pkg/errors"

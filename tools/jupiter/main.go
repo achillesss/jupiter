@@ -15,10 +15,11 @@
 package main
 
 import (
-	"AEX_SERVICE/aex_jupiter/tools/jupiter/new"
-	"AEX_SERVICE/aex_jupiter/tools/jupiter/protoc"
 	"log"
 	"os"
+
+	"github.com/douyu/jupiter/tools/jupiter/new"
+	"github.com/douyu/jupiter/tools/jupiter/protoc"
 
 	"github.com/urfave/cli"
 )

@@ -15,9 +15,9 @@
 package main
 
 import (
-	"AEX_SERVICE/aex_jupiter/pkg/conf"
-	_ "AEX_SERVICE/aex_jupiter/pkg/datasource/apollo"
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
+	"github.com/douyu/jupiter/pkg/conf"
+	_ "github.com/douyu/jupiter/pkg/datasource/apollo"
+	"github.com/douyu/jupiter/pkg/xlog"
 
 	"github.com/douyu/jupiter"
 )

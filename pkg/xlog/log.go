@@ -22,9 +22,9 @@ import (
 	"strings"
 	"time"
 
-	"AEX_SERVICE/aex_jupiter/pkg/conf"
-	"AEX_SERVICE/aex_jupiter/pkg/defers"
-	"AEX_SERVICE/aex_jupiter/pkg/util/xcolor"
+	"github.com/douyu/jupiter/pkg/conf"
+	"github.com/douyu/jupiter/pkg/defers"
+	"github.com/douyu/jupiter/pkg/util/xcolor"
 
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"

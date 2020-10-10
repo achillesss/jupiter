@@ -17,10 +17,10 @@ package etcdv3
 import (
 	"time"
 
-	"AEX_SERVICE/aex_jupiter/pkg/conf"
-	"AEX_SERVICE/aex_jupiter/pkg/ecode"
-	"AEX_SERVICE/aex_jupiter/pkg/util/xtime"
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
+	"github.com/douyu/jupiter/pkg/conf"
+	"github.com/douyu/jupiter/pkg/ecode"
+	"github.com/douyu/jupiter/pkg/util/xtime"
+	"github.com/douyu/jupiter/pkg/xlog"
 )
 
 // Config ...

@@ -3,7 +3,7 @@ package application
 import (
 	"os"
 
-	"AEX_SERVICE/aex_jupiter/pkg/flag"
+	"github.com/douyu/jupiter/pkg/flag"
 )
 
 var (

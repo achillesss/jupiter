@@ -19,10 +19,10 @@ import (
 	"math/rand"
 	"time"
 
-	"AEX_SERVICE/aex_jupiter/pkg/sentinel"
-	"AEX_SERVICE/aex_jupiter/pkg/util/xgo"
-	"AEX_SERVICE/aex_jupiter/pkg/util/xtime"
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
+	"github.com/douyu/jupiter/pkg/sentinel"
+	"github.com/douyu/jupiter/pkg/util/xgo"
+	"github.com/douyu/jupiter/pkg/util/xtime"
+	"github.com/douyu/jupiter/pkg/xlog"
 
 	"github.com/douyu/jupiter"
 )

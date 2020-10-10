@@ -18,10 +18,10 @@ import (
 	"os"
 	"time"
 
-	"AEX_SERVICE/aex_jupiter/pkg"
-	"AEX_SERVICE/aex_jupiter/pkg/conf"
-	"AEX_SERVICE/aex_jupiter/pkg/defers"
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
+	"github.com/douyu/jupiter/pkg"
+	"github.com/douyu/jupiter/pkg/conf"
+	"github.com/douyu/jupiter/pkg/defers"
+	"github.com/douyu/jupiter/pkg/xlog"
 
 	"github.com/opentracing/opentracing-go"
 	"github.com/uber/jaeger-client-go"

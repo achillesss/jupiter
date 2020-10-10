@@ -18,7 +18,7 @@ import (
 	"net/url"
 	"time"
 
-	"AEX_SERVICE/aex_jupiter/pkg/util/xcast"
+	"github.com/douyu/jupiter/pkg/util/xcast"
 )
 
 // URL wrap url.URL.

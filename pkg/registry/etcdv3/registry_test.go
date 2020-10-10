@@ -15,16 +15,17 @@
 package etcdv3
 
 import (
-	"AEX_SERVICE/aex_jupiter/pkg/constant"
 	"context"
 	"fmt"
 	"testing"
 	"time"
 
-	"AEX_SERVICE/aex_jupiter/pkg/client/etcdv3"
-	"AEX_SERVICE/aex_jupiter/pkg/registry"
-	"AEX_SERVICE/aex_jupiter/pkg/server"
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
+	"github.com/douyu/jupiter/pkg/constant"
+
+	"github.com/douyu/jupiter/pkg/client/etcdv3"
+	"github.com/douyu/jupiter/pkg/registry"
+	"github.com/douyu/jupiter/pkg/server"
+	"github.com/douyu/jupiter/pkg/xlog"
 
 	"github.com/stretchr/testify/assert"
 )

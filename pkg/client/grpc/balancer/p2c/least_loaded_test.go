@@ -22,7 +22,7 @@ import (
 	"testing"
 	"time"
 
-	"AEX_SERVICE/aex_jupiter/pkg/client/grpc/balancer/p2c"
+	"github.com/douyu/jupiter/pkg/client/grpc/balancer/p2c"
 
 	"github.com/stretchr/testify/assert"
 	"google.golang.org/grpc"

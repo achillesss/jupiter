@@ -17,7 +17,7 @@ package rotate_test
 import (
 	"log"
 
-	"AEX_SERVICE/aex_jupiter/pkg/xlog/rotate"
+	"github.com/douyu/jupiter/pkg/xlog/rotate"
 )
 
 // To use rotate with the standard library's log package, just pass it into

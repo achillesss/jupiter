@@ -4,7 +4,7 @@ jupiter 提供了脚手架以便快速的创建应用:
 
 1. 安装脚手架工具
 ```
-go get -u AEX_SERVICE/aex_jupiter/tools/jupiter
+go get -u github.com/douyu/jupiter/tools/jupiter
 ```
 2. 创建一个项目
 ``` bash
@@ -112,7 +112,7 @@ func main() {
 
 ``` golang
 import (
-    "AEX_SERVICE/aex_jupiter/pkg/registry/etcdv3"
+    "github.com/douyu/jupiter/pkg/registry/etcdv3"
 )
 func main() {
     app := &MyApplication{}

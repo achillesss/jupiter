@@ -1,7 +1,7 @@
 package job
 
 import (
-	"AEX_SERVICE/aex_jupiter/pkg/flag"
+	"github.com/douyu/jupiter/pkg/flag"
 )
 
 func init() {

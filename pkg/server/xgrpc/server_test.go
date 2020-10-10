@@ -20,8 +20,8 @@ import (
 	"testing"
 	"time"
 
-	"AEX_SERVICE/aex_jupiter/pkg/constant"
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
+	"github.com/douyu/jupiter/pkg/constant"
+	"github.com/douyu/jupiter/pkg/xlog"
 
 	"github.com/smartystreets/goconvey/convey"
 	"google.golang.org/grpc"

@@ -1,11 +1,12 @@
 package gorm
 
 import (
-	"AEX_SERVICE/aex_jupiter/pkg/metric"
-	"AEX_SERVICE/aex_jupiter/pkg/server/governor"
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 	"net/http"
 	"time"
+
+	"github.com/douyu/jupiter/pkg/metric"
+	"github.com/douyu/jupiter/pkg/server/governor"
+	"github.com/douyu/jupiter/pkg/xlog"
 
 	jsoniter "github.com/json-iterator/go"
 )

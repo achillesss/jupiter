@@ -19,9 +19,9 @@ import (
 	"log"
 	"path/filepath"
 
-	"AEX_SERVICE/aex_jupiter/pkg/util/xfile"
-	"AEX_SERVICE/aex_jupiter/pkg/util/xgo"
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
+	"github.com/douyu/jupiter/pkg/util/xfile"
+	"github.com/douyu/jupiter/pkg/util/xgo"
+	"github.com/douyu/jupiter/pkg/xlog"
 
 	"github.com/fsnotify/fsnotify"
 )

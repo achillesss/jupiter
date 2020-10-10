@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"io"
 
-	"AEX_SERVICE/aex_jupiter/pkg/server"
+	"github.com/douyu/jupiter/pkg/server"
 )
 
 // Event ...

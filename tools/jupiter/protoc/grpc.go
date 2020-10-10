@@ -1,13 +1,14 @@
 package protoc
 
 import (
-	"AEX_SERVICE/aex_jupiter/pkg/util/xcolor"
 	"errors"
 	"fmt"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"strings"
+
+	"github.com/douyu/jupiter/pkg/util/xcolor"
 )
 
 const (

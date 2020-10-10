@@ -18,10 +18,10 @@ import (
 	"context"
 	"time"
 
-	"AEX_SERVICE/aex_jupiter/pkg/client/etcdv3"
-	"AEX_SERVICE/aex_jupiter/pkg/conf"
-	"AEX_SERVICE/aex_jupiter/pkg/util/xgo"
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
+	"github.com/douyu/jupiter/pkg/client/etcdv3"
+	"github.com/douyu/jupiter/pkg/conf"
+	"github.com/douyu/jupiter/pkg/util/xgo"
+	"github.com/douyu/jupiter/pkg/xlog"
 
 	"github.com/pkg/errors"
 	"go.etcd.io/etcd/clientv3"

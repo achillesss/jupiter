@@ -1,14 +1,14 @@
 package engine
 
 import (
-	"AEX_SERVICE/aex_jupiter"
+	"github.com/douyu/jupiter"
 	"{{.ModPrefix}}{{.Name}}/internal/app/grpc/greeter"
 	"{{.ModPrefix}}{{.Name}}/internal/app/handler"
-	"AEX_SERVICE/aex_jupiter/pkg/server/xecho"
-	"AEX_SERVICE/aex_jupiter/pkg/worker/xcron"
-	"AEX_SERVICE/aex_jupiter/pkg/server/xgrpc"
-	"AEX_SERVICE/aex_jupiter/pkg/util/xgo"
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
+	"github.com/douyu/jupiter/pkg/server/xecho"
+	"github.com/douyu/jupiter/pkg/worker/xcron"
+	"github.com/douyu/jupiter/pkg/server/xgrpc"
+	"github.com/douyu/jupiter/pkg/util/xgo"
+	"github.com/douyu/jupiter/pkg/xlog"
 	"github.com/labstack/echo/v4"
 	"google.golang.org/grpc/examples/helloworld/helloworld"
 	"time"

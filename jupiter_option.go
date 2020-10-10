@@ -1,6 +1,6 @@
 package jupiter
 
-import "AEX_SERVICE/aex_jupiter/pkg/conf"
+import "github.com/douyu/jupiter/pkg/conf"
 
 type Option func(a *Application)
 

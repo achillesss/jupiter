@@ -16,14 +16,14 @@ docker run -d --name jaeger   -e COLLECTOR_ZIPKIN_HTTP_PORT=9411   -p 5775:5775/
 jupiter内置了一个简单的demo，可以直接启动:
 
 ```
-cd AEX_SERVICE/aex_jupiter
+cd github.com/douyu/jupiter
 make demo
 ```
 
 ### 启动客户端
 
 ```
-cd AEX_SERVICE/aex_jupiter/example/grpc/direct/direct-client
+cd github.com/douyu/jupiter/example/grpc/direct/direct-client
 go run main.go --config=config.toml
 ```
 
@@ -40,4 +40,4 @@ http://127.0.0.1:16686
 
 目前，支持http-server/grpc-server/grpc-client/gorm四种链路。未来，还将释放http-client/redigo/bigcache等链路采集。
 
-> gorm链路，请参考: AEX_SERVICE/aex_jupiter/example/client/gorm
+> gorm链路，请参考: github.com/douyu/jupiter/example/client/gorm

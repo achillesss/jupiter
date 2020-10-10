@@ -18,9 +18,9 @@ import (
 	"context"
 	"time"
 
-	"AEX_SERVICE/aex_jupiter/pkg/ecode"
+	"github.com/douyu/jupiter/pkg/ecode"
 
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
+	"github.com/douyu/jupiter/pkg/xlog"
 
 	"google.golang.org/grpc"
 )

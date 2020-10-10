@@ -24,17 +24,17 @@ import (
 	"sync"
 	"time"
 
-	"AEX_SERVICE/aex_jupiter/pkg"
-	"AEX_SERVICE/aex_jupiter/pkg/constant"
+	"github.com/douyu/jupiter/pkg"
+	"github.com/douyu/jupiter/pkg/constant"
 
 	"go.etcd.io/etcd/clientv3/concurrency"
 
-	"AEX_SERVICE/aex_jupiter/pkg/client/etcdv3"
-	"AEX_SERVICE/aex_jupiter/pkg/ecode"
-	"AEX_SERVICE/aex_jupiter/pkg/registry"
-	"AEX_SERVICE/aex_jupiter/pkg/server"
-	"AEX_SERVICE/aex_jupiter/pkg/util/xgo"
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
+	"github.com/douyu/jupiter/pkg/client/etcdv3"
+	"github.com/douyu/jupiter/pkg/ecode"
+	"github.com/douyu/jupiter/pkg/registry"
+	"github.com/douyu/jupiter/pkg/server"
+	"github.com/douyu/jupiter/pkg/util/xgo"
+	"github.com/douyu/jupiter/pkg/xlog"
 
 	"go.etcd.io/etcd/clientv3"
 	"go.etcd.io/etcd/mvcc/mvccpb"

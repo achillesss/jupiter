@@ -15,10 +15,11 @@
 package main
 
 import (
-	"AEX_SERVICE/aex_jupiter/pkg/conf"
-	_ "AEX_SERVICE/aex_jupiter/pkg/datasource/etcdv3"
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 	"context"
+
+	"github.com/douyu/jupiter/pkg/conf"
+	_ "github.com/douyu/jupiter/pkg/datasource/etcdv3"
+	"github.com/douyu/jupiter/pkg/xlog"
 
 	"github.com/douyu/jupiter"
 	"go.etcd.io/etcd/clientv3"

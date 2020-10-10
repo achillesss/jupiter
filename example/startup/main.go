@@ -17,11 +17,11 @@ package main
 import (
 	"time"
 
-	"AEX_SERVICE/aex_jupiter/pkg/server"
-	"AEX_SERVICE/aex_jupiter/pkg/server/xecho"
-	"AEX_SERVICE/aex_jupiter/pkg/server/xgrpc"
-	"AEX_SERVICE/aex_jupiter/pkg/worker"
-	"AEX_SERVICE/aex_jupiter/pkg/worker/xcron"
+	"github.com/douyu/jupiter/pkg/server"
+	"github.com/douyu/jupiter/pkg/server/xecho"
+	"github.com/douyu/jupiter/pkg/server/xgrpc"
+	"github.com/douyu/jupiter/pkg/worker"
+	"github.com/douyu/jupiter/pkg/worker/xcron"
 
 	"github.com/douyu/jupiter"
 	"github.com/labstack/echo/v4"

@@ -15,10 +15,11 @@
 package main
 
 import (
-	"AEX_SERVICE/aex_jupiter/pkg/worker/xcron"
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
 	"fmt"
 	"time"
+
+	"github.com/douyu/jupiter/pkg/worker/xcron"
+	"github.com/douyu/jupiter/pkg/xlog"
 
 	"github.com/douyu/jupiter"
 )

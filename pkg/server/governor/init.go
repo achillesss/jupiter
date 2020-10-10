@@ -15,11 +15,12 @@
 package governor
 
 import (
-	"AEX_SERVICE/aex_jupiter/pkg"
-	"AEX_SERVICE/aex_jupiter/pkg/conf"
 	"encoding/json"
 	"net/http"
 	"os"
+
+	"github.com/douyu/jupiter/pkg"
+	"github.com/douyu/jupiter/pkg/conf"
 
 	jsoniter "github.com/json-iterator/go"
 )

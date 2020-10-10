@@ -18,7 +18,7 @@ import (
 	"sync"
 	"time"
 
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
+	"github.com/douyu/jupiter/pkg/xlog"
 
 	"github.com/robfig/cron/v3"
 )

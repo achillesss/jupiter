@@ -17,10 +17,10 @@ package rocketmq
 import (
 	"context"
 
-	"AEX_SERVICE/aex_jupiter/pkg/defers"
-	"AEX_SERVICE/aex_jupiter/pkg/istats"
-	"AEX_SERVICE/aex_jupiter/pkg/util/xdebug"
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
+	"github.com/douyu/jupiter/pkg/defers"
+	"github.com/douyu/jupiter/pkg/istats"
+	"github.com/douyu/jupiter/pkg/util/xdebug"
+	"github.com/douyu/jupiter/pkg/xlog"
 
 	"github.com/apache/rocketmq-client-go/v2"
 	"github.com/apache/rocketmq-client-go/v2/primitive"

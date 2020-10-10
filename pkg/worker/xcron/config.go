@@ -19,17 +19,17 @@ import (
 	"runtime"
 	"time"
 
-	"AEX_SERVICE/aex_jupiter/pkg/client/etcdv3"
-	"AEX_SERVICE/aex_jupiter/pkg/ecode"
+	"github.com/douyu/jupiter/pkg/client/etcdv3"
+	"github.com/douyu/jupiter/pkg/ecode"
 
 	"go.etcd.io/etcd/clientv3/concurrency"
 
-	"AEX_SERVICE/aex_jupiter/pkg/metric"
+	"github.com/douyu/jupiter/pkg/metric"
 
 	"go.uber.org/zap"
 
-	"AEX_SERVICE/aex_jupiter/pkg/conf"
-	"AEX_SERVICE/aex_jupiter/pkg/xlog"
+	"github.com/douyu/jupiter/pkg/conf"
+	"github.com/douyu/jupiter/pkg/xlog"
 
 	"github.com/robfig/cron/v3"
 )
