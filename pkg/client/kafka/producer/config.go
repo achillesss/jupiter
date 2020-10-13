@@ -1,8 +1,6 @@
 package producer
 
 import (
-	"fmt"
-
 	"github.com/confluentinc/confluent-kafka-go/kafka"
 	"github.com/douyu/jupiter/pkg/client/kafka/config"
 	"github.com/douyu/jupiter/pkg/conf"
@@ -195,31 +193,36 @@ func DefaultConfigLow() ConfigLowLevel {
 	}
 }
 
-type Config struct {
+type kafkaConfig struct {
 	ConfigHighLevel        `json:",flatten"`
 	ConfigMediumLevel      `json:",flatten"`
 	ConfigLowLevel         `json:",flatten"`
 	TopicConfigHighLevel   `json:",flatten"`
 	TopicConfigMediumLevel `json:",flatten"`
 	// TopicConfigLowLevel    `json:",flatten"`
-
-	logger *xlog.Logger `json:"-"`
 }
 
-func DefaultKafkaConfig() Config {
-	return Config{
-		ConfigHighLevel:        DefaultConfigHigh(),
-		ConfigMediumLevel:      DefaultConfigMedium(),
-		ConfigLowLevel:         DefaultConfigLow(),
-		TopicConfigHighLevel:   DefaultTopicConfigHigh(),
-		TopicConfigMediumLevel: DefaultTopicConfigMedium(),
+type Config struct {
+	KafkaConfig kafkaConfig `json:"kafka_config"`
+	logger      *xlog.Logger
+}
+
+func DefaultKafkaConfig() *Config {
+	return &Config{
+		KafkaConfig: kafkaConfig{
+			ConfigHighLevel:        DefaultConfigHigh(),
+			ConfigMediumLevel:      DefaultConfigMedium(),
+			ConfigLowLevel:         DefaultConfigLow(),
+			TopicConfigHighLevel:   DefaultTopicConfigHigh(),
+			TopicConfigMediumLevel: DefaultTopicConfigMedium(),
+		},
 		// TopicConfigLowLevel:    DefaultTopicConfigLow(),
 		logger: xlog.JupiterLogger,
 	}
 }
 
 // RawKafkaConfig ...
-func RawKafkaConfig(key string) Config {
+func RawKafkaConfig(key string) *Config {
 	var config = DefaultKafkaConfig()
 
 	if err := conf.UnmarshalKey(key, &config); err != nil {
@@ -232,7 +235,7 @@ func RawKafkaConfig(key string) Config {
 }
 
 // StdKafkaConfig ...
-func StdKafkaConfig(name string) Config {
+func StdKafkaConfig(name string) *Config {
 	return RawKafkaConfig("jupiter.kafka.producer." + name)
 }
 
@@ -246,15 +249,11 @@ func (config *Config) Build() *Producer {
 	producer.Config = config
 
 	structs.DefaultTagName = "json"
-	var m = structs.Map(config)
+	var m = structs.Map(config.KafkaConfig)
 
 	var kafkaConf = make(kafka.ConfigMap)
 	for k, v := range m {
 		kafkaConf.SetKey(k, v)
-	}
-
-	for k, v := range kafkaConf {
-		config.logger.Info("kv", xlog.Any(k, fmt.Sprintf("%v, %T", v, v)))
 	}
 
 	var p, err = kafka.NewProducer(&kafkaConf)

@@ -1,8 +1,6 @@
 package consumer
 
 import (
-	"fmt"
-
 	"github.com/confluentinc/confluent-kafka-go/kafka"
 	"github.com/douyu/jupiter/pkg/client/kafka/config"
 	"github.com/douyu/jupiter/pkg/conf"
@@ -214,26 +212,32 @@ func DefaultConfigLow() ConfigLowLevel {
 	}
 }
 
-type Config struct {
+type kafkaConfig struct {
 	ConfigHighLevel      `json:",flatten"`
 	ConfigMediumLevel    `json:",flatten"`
 	ConfigLowLevel       `json:",flatten"`
 	TopicConfigHighLevel `json:",flatten"`
 	// 	TopicConfigMediumLevel `json:",flatten"`
 	TopicConfigLowLevel `json:",flatten"`
+}
 
-	logger *xlog.Logger `json:"-"`
+type Config struct {
+	KafkaConfig kafkaConfig `json:"kafka_config"`
+	logger      *xlog.Logger
 }
 
 func DefaultKafkaConfig() Config {
 	return Config{
-		ConfigHighLevel:      DefaultConfigHigh(),
-		ConfigMediumLevel:    DefaultConfigMedium(),
-		ConfigLowLevel:       DefaultConfigLow(),
-		TopicConfigHighLevel: DefaultTopicConfigHigh(),
-		// TopicConfigMediumLevel: DefaultTopicConfigMedium(),
-		TopicConfigLowLevel: DefaultTopicConfigLow(),
-		logger:              xlog.JupiterLogger,
+		KafkaConfig: kafkaConfig{
+			ConfigHighLevel:      DefaultConfigHigh(),
+			ConfigMediumLevel:    DefaultConfigMedium(),
+			ConfigLowLevel:       DefaultConfigLow(),
+			TopicConfigHighLevel: DefaultTopicConfigHigh(),
+			// TopicConfigMediumLevel: DefaultTopicConfigMedium(),
+			TopicConfigLowLevel: DefaultTopicConfigLow(),
+		},
+
+		logger: xlog.JupiterLogger,
 	}
 }
 
@@ -265,15 +269,11 @@ func (config *Config) Build() *Consumer {
 	consumer.Config = config
 
 	structs.DefaultTagName = "json"
-	var m = structs.Map(config)
+	var m = structs.Map(config.KafkaConfig)
 
 	var kafkaConf = make(kafka.ConfigMap)
 	for k, v := range m {
 		kafkaConf.SetKey(k, v)
-	}
-
-	for k, v := range kafkaConf {
-		config.logger.Info("kv", xlog.Any(k, fmt.Sprintf("%v, %T", v, v)))
 	}
 
 	var c, err = kafka.NewConsumer(&kafkaConf)

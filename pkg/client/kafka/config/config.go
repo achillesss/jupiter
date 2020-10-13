@@ -37,19 +37,13 @@ type ConfigHighLevel struct {
 
 func DefaultConfigHigh() ConfigHighLevel {
 	return ConfigHighLevel{
-		MatadataBrokerList: "localhost",
-
+		MatadataBrokerList:   "localhost",
 		StatisticsIntervalMs: 0,
-
-		ApiVersionRequest: true,
-
-		SecurityProtocol: "PLAINTEXT",
-
-		SaslMechanisms: "PLAIN",
-
-		SaslUsername: "",
-
-		SaslPassword: "",
+		ApiVersionRequest:    true,
+		SecurityProtocol:     "PLAINTEXT",
+		SaslMechanisms:       "PLAIN",
+		SaslUsername:         "",
+		SaslPassword:         "",
 	}
 }
 
@@ -388,92 +382,51 @@ type ConfigLowLevel struct {
 
 func DefaultConfigLow() ConfigLowLevel {
 	return ConfigLowLevel{
-		BuiltInFeatures: "gzip, snappy, ssl, sasl, regex, lz4, sasl_gssapi, sasl_plain, sasl_scram, plugins, zstd, sasl_oauthbearer",
-		ClientID:        "rdkafka",
-
-		MessageCopyMaxBytes: 65535,
-
-		MaxInFlightRequestsPerConnection: 1e6,
-
-		MetadataRequestTimeoutMs: 6e4,
-
-		TopicMetadataRefreshIntervalMs: 3e5,
-
-		MetadataMaxAgeMs: 9e5,
-
+		BuiltInFeatures:                    "gzip, snappy, ssl, sasl, regex, lz4, sasl_gssapi, sasl_plain, sasl_scram, plugins, zstd, sasl_oauthbearer",
+		ClientID:                           "rdkafka",
+		MessageCopyMaxBytes:                65535,
+		MaxInFlightRequestsPerConnection:   1e6,
+		MetadataRequestTimeoutMs:           6e4,
+		TopicMetadataRefreshIntervalMs:     3e5,
+		MetadataMaxAgeMs:                   9e5,
 		TopicMetadataRefreshFastIntervalMs: 250,
-
-		TopicMetadataRefreshSparse: true,
+		TopicMetadataRefreshSparse:         true,
+		SocketTimeoutMs:                    6e4,
+		SocketSendBufferBytes:              0,
+		SocketReceiveBufferBytes:           0,
+		SocketKeepaliveEnable:              false,
+		SocketNagleDisable:                 false,
+		SocketMaxFails:                     1,
+		BrockerAddressTTL:                  1e3,
+		BrockerAddressFamily:               "any",
+		EnabledEvents:                      0,
+		LogLevel:                           6,
+		LogQueue:                           false,
+		LogThreadName:                      true,
+		EnableRandomSeed:                   true,
+		LogConnectionClose:                 true,
+		InternalTerminaltionSignal:         0,
+		ApiVersionRequestTimeoutMs:         1e4,
+		SslCipherSuites:                    "",
+		SslCurvesList:                      "",
+		SslSigalgsList:                     "",
+		SslKeyLocation:                     "",
+		SslKeyPassword:                     "",
+		SslKeyPem:                          "",
+		SslCaLocation:                      "",
+		SslCrlLocation:                     "",
+		SslKeystoreLocation:                "",
+		EnableSslCertificateVerification:   true,
+		SslEndpointIdentificationAlgorithm: "none",
+		SaslKerberosServiceName:            "kafka",
+		SaslKerberosPrincipal:              "kafkaclient",
+		SaslKerberosKinitCmd:               "kinit -R -t \"%{sasl.kerberos.keytab}\" -k %{sasl.kerberos.principal} || kinit -t \"%{sasl.kerberos.keytab}\" -k %{sasl.kerberos.principal}",
+		SaslKerberosKeytab:                 "",
+		SaslKerberosMinTimeBeforeRelogin:   6e4,
+		EnableSaslOauthbearerUnsecureJwt:   false,
+		PluginLibraryPaths:                 "",
 
 		// TopicMetadataPropagationMaxMs: 3e5,
-
-		SocketTimeoutMs: 6e4,
-
-		SocketSendBufferBytes: 0,
-
-		SocketReceiveBufferBytes: 0,
-
-		SocketKeepaliveEnable: false,
-
-		SocketNagleDisable: false,
-
-		SocketMaxFails: 1,
-
-		BrockerAddressTTL: 1e3,
-
-		BrockerAddressFamily: "any",
-
-		EnabledEvents: 0,
-
-		LogLevel: 6,
-
-		LogQueue: false,
-
-		LogThreadName: true,
-
-		EnableRandomSeed: true,
-
-		LogConnectionClose: true,
-
-		InternalTerminaltionSignal: 0,
-
-		ApiVersionRequestTimeoutMs: 1e4,
-
-		SslCipherSuites: "",
-
-		SslCurvesList: "",
-
-		SslSigalgsList: "",
-
-		SslKeyLocation: "",
-
-		SslKeyPassword: "",
-
-		SslKeyPem: "",
-
-		SslCaLocation: "",
-
-		SslCrlLocation: "",
-
-		SslKeystoreLocation: "",
-
-		EnableSslCertificateVerification: true,
-
-		SslEndpointIdentificationAlgorithm: "none",
-
-		SaslKerberosServiceName: "kafka",
-
-		SaslKerberosPrincipal: "kafkaclient",
-
-		SaslKerberosKinitCmd: "kinit -R -t \"%{sasl.kerberos.keytab}\" -k %{sasl.kerberos.principal} || kinit -t \"%{sasl.kerberos.keytab}\" -k %{sasl.kerberos.principal}",
-
-		SaslKerberosKeytab: "",
-
-		SaslKerberosMinTimeBeforeRelogin: 6e4,
-
-		EnableSaslOauthbearerUnsecureJwt: false,
-
-		PluginLibraryPaths: "",
 	}
 }
 
