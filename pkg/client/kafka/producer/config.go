@@ -10,6 +10,39 @@ import (
 	"github.com/fatih/structs"
 )
 
+type TopicConfigHighLevel struct {
+	// This field indicates the number of acknowledgements the leader broker must receive from ISR brokers before responding to the request: 0=Broker does not send any response/ack to client, -1 or all=Broker will block until message is committed by all in sync replicas (ISRs). If there are less than min.insync.replicas (broker configuration) in the ISR set the produce request will fail.
+	// range: -1 ~ 1e3
+	// Type: integer
+	// alias: acks
+	RequestRequiredAcks int `json:"request.required.acks"`
+
+	// Local message timeout. This value is only enforced locally and limits the time a produced message waits for successful delivery. A time of 0 is infinite. This is the maximum time librdkafka may use to deliver a message (including retries). Delivery error occurs when either the retry count or the message timeout are exceeded. The message timeout is automatically adjusted to transaction.timeout.ms if transactional.id is configured.
+	// range: 0 ~ 2147483647
+	// Type: integer
+	// alias: delivery.timeout.ms
+	MessageTimeoutMs int `json:"message.timeout.ms"`
+
+	// Partitioner: random - random distribution, consistent - CRC32 hash of key (Empty and NULL keys are mapped to single partition), consistent_random - CRC32 hash of key (Empty and NULL keys are randomly partitioned), murmur2 - Java Producer compatible Murmur2 hash of key (NULL keys are mapped to single partition), murmur2_random - Java Producer compatible Murmur2 hash of key (NULL keys are randomly partitioned. This is functionally equivalent to the default partitioner in the Java Producer.), fnv1a - FNV-1a hash of key (NULL keys are mapped to single partition), fnv1a_random - FNV-1a hash of key (NULL keys are randomly partitioned).
+	// Type: string
+	Partitioner string `json:"partitioner"`
+
+	// Compression codec to use for compressing message sets. inherit = inherit global compression.codec configuration.
+	// range: none, gzip, snappy, lz4, zstd, inherit
+	// Type: enum value
+	// alias: compression.type
+	CompressionCodec string `json:"compression.codec"`
+}
+
+func DefaultTopicConfigHigh() TopicConfigHighLevel {
+	return TopicConfigHighLevel{
+		RequestRequiredAcks: -1,
+		MessageTimeoutMs:    3e5,
+		Partitioner:         "consistent_random",
+		CompressionCodec:    "none",
+	}
+}
+
 type ConfigHighLevel struct {
 	config.ConfigHighLevel `json:",flatten"`
 
@@ -44,21 +77,34 @@ type ConfigHighLevel struct {
 	MessageSendMaxRetries int `json:"message.send.max.retries"`
 }
 
-func DefaultConfigKafkaHigh() ConfigHighLevel {
+func DefaultConfigHigh() ConfigHighLevel {
 	return ConfigHighLevel{
-		ConfigHighLevel: config.DefaultKafkaConfigHigh(),
-
-		TransactionalID: "",
-
-		EnableIdempotence: false,
-
+		ConfigHighLevel:           config.DefaultConfigHigh(),
+		TransactionalID:           "",
+		EnableIdempotence:         false,
 		QueueBufferingMaxMessages: 1e5,
+		QueueBufferingMaxKbytes:   1048576,
+		QueueBufferingMaxMs:       5,
+		MessageSendMaxRetries:     10000000,
+	}
+}
 
-		QueueBufferingMaxKbytes: 1048576,
+type TopicConfigMediumLevel struct {
+	// The ack timeout of the producer request in milliseconds. This value is only enforced by the broker and relies on request.required.acks being != 0.
+	// range 1 ~ 9e5
+	// Type: integer
+	RequestTimeoutMs int `json:"request.timeout.ms"`
 
-		QueueBufferingMaxMs: 5,
+	// Compression level parameter for algorithm selected by configuration property compression.codec. Higher values will result in better compression at the cost of more CPU usage. Usable range is algorithm-dependent: [0-9] for gzip; [0-12] for lz4; only 0 for snappy; -1 = codec-dependent default compression level.
+	// range: -1 ~ 12
+	// Type: integer
+	CompressionLevel int `json:"compression.level"`
+}
 
-		MessageSendMaxRetries: 10000000,
+func DefaultTopicConfigMedium() TopicConfigMediumLevel {
+	return TopicConfigMediumLevel{
+		RequestTimeoutMs: 3e4,
+		CompressionLevel: -1,
 	}
 }
 
@@ -94,21 +140,26 @@ type ConfigMediumLevel struct {
 	// BatchSize int `json:"batch.size"`
 }
 
-func DefaultConfigKafkaMedium() ConfigMediumLevel {
+func DefaultConfigMedium() ConfigMediumLevel {
 	return ConfigMediumLevel{
-		ConfigMediumLevel: config.DefaultKafkaConfigMedium(),
-
+		ConfigMediumLevel:    config.DefaultConfigMedium(),
 		TransactionTimeoutMs: 6e4,
-
-		RetryBackoffMs: 100,
-
-		CompressionCodec: "none",
-
-		BatchNumMessages: 1e4,
-
+		RetryBackoffMs:       100,
+		CompressionCodec:     "none",
+		BatchNumMessages:     1e4,
 		// BatchSize: 1e6,
 	}
 }
+
+// type TopicConfigLowLevel struct {
+// 	// Custom partitioner callback (set with rd_kafka_topic_conf_set_partitioner_cb())
+// 	// Type: see dedicated API
+// 	PartitionerCb interface{} `json:"-"`
+// }
+//
+// func DefaultTopicConfigLow() TopicConfigLowLevel {
+// 	return TopicConfigLowLevel{}
+// }
 
 type ConfigLowLevel struct {
 	config.ConfigLowLevel `json:",flatten"`
@@ -135,32 +186,35 @@ type ConfigLowLevel struct {
 	DrMsgCb interface{} `json:"-"`
 }
 
-func DefaultConfigKafkaLow() ConfigLowLevel {
+func DefaultConfigLow() ConfigLowLevel {
 	return ConfigLowLevel{
-		ConfigLowLevel: config.DefaultKafkaConfigLow(),
-
-		EnableGaplessGuarantee: false,
-
+		ConfigLowLevel:                      config.DefaultConfigLow(),
+		EnableGaplessGuarantee:              false,
 		QueueBufferingBackpressureThreshold: 1,
-
-		DeliveryReportOnlyError: false,
+		DeliveryReportOnlyError:             false,
 	}
 }
 
 type Config struct {
-	ConfigHighLevel   `json:",flatten"`
-	ConfigMediumLevel `json:",flatten"`
-	ConfigLowLevel    `json:",flatten"`
+	ConfigHighLevel        `json:",flatten"`
+	ConfigMediumLevel      `json:",flatten"`
+	ConfigLowLevel         `json:",flatten"`
+	TopicConfigHighLevel   `json:",flatten"`
+	TopicConfigMediumLevel `json:",flatten"`
+	// TopicConfigLowLevel    `json:",flatten"`
 
 	logger *xlog.Logger `json:"-"`
 }
 
 func DefaultKafkaConfig() Config {
 	return Config{
-		ConfigHighLevel:   DefaultConfigKafkaHigh(),
-		ConfigMediumLevel: DefaultConfigKafkaMedium(),
-		ConfigLowLevel:    DefaultConfigKafkaLow(),
-		logger:            xlog.JupiterLogger,
+		ConfigHighLevel:        DefaultConfigHigh(),
+		ConfigMediumLevel:      DefaultConfigMedium(),
+		ConfigLowLevel:         DefaultConfigLow(),
+		TopicConfigHighLevel:   DefaultTopicConfigHigh(),
+		TopicConfigMediumLevel: DefaultTopicConfigMedium(),
+		// TopicConfigLowLevel:    DefaultTopicConfigLow(),
+		logger: xlog.JupiterLogger,
 	}
 }
 

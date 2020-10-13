@@ -10,6 +10,19 @@ import (
 	"github.com/gqcn/structs"
 )
 
+type TopicConfigHighLevel struct {
+	// Action to take when there is no initial offset in offset store or the desired offset is out of range: 'smallest','earliest' - automatically reset the offset to the smallest offset, 'largest','latest' - automatically reset the offset to the largest offset, 'error' - trigger an error which is retrieved by consuming messages and checking 'message->err'.
+	// smallest, earliest, beginning, largest, latest, end, error
+	// Type: enum value
+	AutoOffsetReset string `json:"auto.offset.reset"`
+}
+
+func DefaultTopicConfigHigh() TopicConfigHighLevel {
+	return TopicConfigHighLevel{
+		AutoOffsetReset: "earliest",
+	}
+}
+
 type ConfigHighLevel struct {
 	config.ConfigHighLevel `json:",flatten"`
 
@@ -41,23 +54,23 @@ type ConfigHighLevel struct {
 	IsolationLevel string `json:"isolation.level"`
 }
 
-func DefaultConfigKafkaHigh() ConfigHighLevel {
+func DefaultConfigHigh() ConfigHighLevel {
 	return ConfigHighLevel{
-		ConfigHighLevel: config.DefaultKafkaConfigHigh(),
-
-		GroupID: "",
-
-		SessionTimeoutMs: 1e4,
-
-		MaxPollIntervalMs: 3e5,
-
-		EnableAutoCommit: true,
-
+		ConfigHighLevel:       config.DefaultConfigHigh(),
+		GroupID:               "",
+		SessionTimeoutMs:      1e4,
+		MaxPollIntervalMs:     3e5,
+		EnableAutoCommit:      true,
 		EnableAutoOffsetStore: true,
-
-		IsolationLevel: "read_committed",
+		IsolationLevel:        "read_committed",
 	}
 }
+
+// type TopicConfigMediumLevel struct{}
+//
+// func DefaultTopicConfigMedium() TopicConfigMediumLevel {
+// 	return TopicConfigMediumLevel{}
+// }
 
 type ConfigMediumLevel struct {
 	config.ConfigMediumLevel `json:",flatten"`
@@ -106,25 +119,30 @@ type ConfigMediumLevel struct {
 	CheckCrcs bool `json:"check.crcs"`
 }
 
-func DefaultConfigKafkaMedium() ConfigMediumLevel {
+func DefaultConfigMedium() ConfigMediumLevel {
 	return ConfigMediumLevel{
-		ConfigMediumLevel: config.DefaultKafkaConfigMedium(),
-
-		GroupInstanceId: "",
-
+		ConfigMediumLevel:           config.DefaultConfigMedium(),
+		GroupInstanceId:             "",
 		PartitionAssignmentStrategy: "range,roundrobin",
+		AutoCommitIntervalMs:        5e3,
+		QueuedMinMessages:           1e5,
+		QueuedMaxMessagesKbytes:     65536,
+		FetchMessageMaxBytes:        1048576,
+		FetchMaxBytes:               52428800,
+		FetchErrorBackoffMs:         500,
+	}
+}
 
-		AutoCommitIntervalMs: 5e3,
+type TopicConfigLowLevel struct {
+	// Maximum number of messages to dispatch in one rd_kafka_consume_callback*() call (0 = unlimited)
+	// range: 0 ~ 1e6
+	// Type: integer
+	ConsumeCallbackMaxMessages int `json:"consume.callback.max.messages"`
+}
 
-		QueuedMinMessages: 1e5,
-
-		QueuedMaxMessagesKbytes: 65536,
-
-		FetchMessageMaxBytes: 1048576,
-
-		FetchMaxBytes: 52428800,
-
-		FetchErrorBackoffMs: 500,
+func DefaultTopicConfigLow() TopicConfigLowLevel {
+	return TopicConfigLowLevel{
+		ConsumeCallbackMaxMessages: 0,
 	}
 }
 
@@ -182,41 +200,40 @@ type ConfigLowLevel struct {
 	ClientRack string `json:"client.rack"`
 }
 
-func DefaultConfigKafkaLow() ConfigLowLevel {
+func DefaultConfigLow() ConfigLowLevel {
 	return ConfigLowLevel{
-		ConfigLowLevel: config.DefaultKafkaConfigLow(),
-
-		HeartbeatIntervalMs: 3e3,
-
-		GroupProtocolType: "consumer",
-
+		ConfigLowLevel:             config.DefaultConfigLow(),
+		HeartbeatIntervalMs:        3e3,
+		GroupProtocolType:          "consumer",
 		CoordinatorQueryIntervalMs: 6e5,
-
-		FetchWaitMaxMs: 500,
-
-		FetchMinBytes: 1,
-
-		EnablePartitionEof: false,
-
+		FetchWaitMaxMs:             500,
+		FetchMinBytes:              1,
+		EnablePartitionEof:         false,
+		ClientRack:                 "",
 		// AllowAutoCreateTopics: false,
-
-		ClientRack: "",
 	}
 }
 
 type Config struct {
-	ConfigHighLevel   `json:",flatten"`
-	ConfigMediumLevel `json:",flatten"`
-	ConfigLowLevel    `json:",flatten"`
-	logger            *xlog.Logger `json:"-"`
+	ConfigHighLevel      `json:",flatten"`
+	ConfigMediumLevel    `json:",flatten"`
+	ConfigLowLevel       `json:",flatten"`
+	TopicConfigHighLevel `json:",flatten"`
+	// 	TopicConfigMediumLevel `json:",flatten"`
+	TopicConfigLowLevel `json:",flatten"`
+
+	logger *xlog.Logger `json:"-"`
 }
 
 func DefaultKafkaConfig() Config {
 	return Config{
-		ConfigHighLevel:   DefaultConfigKafkaHigh(),
-		ConfigMediumLevel: DefaultConfigKafkaMedium(),
-		ConfigLowLevel:    DefaultConfigKafkaLow(),
-		logger:            xlog.JupiterLogger,
+		ConfigHighLevel:      DefaultConfigHigh(),
+		ConfigMediumLevel:    DefaultConfigMedium(),
+		ConfigLowLevel:       DefaultConfigLow(),
+		TopicConfigHighLevel: DefaultTopicConfigHigh(),
+		// TopicConfigMediumLevel: DefaultTopicConfigMedium(),
+		TopicConfigLowLevel: DefaultTopicConfigLow(),
+		logger:              xlog.JupiterLogger,
 	}
 }
 

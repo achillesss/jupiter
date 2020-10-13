@@ -19,7 +19,7 @@ func runProducer(p *producer.Producer, topics ...string) {
 					continue
 				}
 
-				fmt.Printf("Produce msg: %+#v\n", ev.TopicPartition)
+				fmt.Printf("Produce msg: %+v\n", ev.TopicPartition)
 			}
 		}
 	}()
@@ -39,7 +39,6 @@ func runProducer(p *producer.Producer, topics ...string) {
 }
 
 func runConsumer(c *consumer.Consumer, topics ...string) {
-	print("run consumer")
 	c.SubscribeTopics(topics, nil)
 
 	for {
@@ -58,17 +57,17 @@ func runConsumer(c *consumer.Consumer, topics ...string) {
 
 func TestKafka(t *testing.T) {
 	var producerConfig = producer.DefaultKafkaConfig()
+
 	var consumerConfig = consumer.DefaultKafkaConfig()
-	consumerConfig.GroupID = "UserBalanceServiceGroup"
 	consumerConfig.GroupID = "TestConsumerGroup"
 
-	var c = consumerConfig.Build()
-	defer c.Close()
+	var topics = []string{"test_topic1", "test_topic2"}
 
 	var p = producerConfig.Build()
 	defer p.Close()
-
-	var topics = []string{"test_topic1", "test_topic2"}
 	go runProducer(p, topics...)
+
+	var c = consumerConfig.Build()
+	defer c.Close()
 	runConsumer(c, topics...)
 }

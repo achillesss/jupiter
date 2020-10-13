@@ -35,7 +35,7 @@ type ConfigHighLevel struct {
 	SaslPassword string `json:"sasl.password"`
 }
 
-func DefaultKafkaConfigHigh() ConfigHighLevel {
+func DefaultConfigHigh() ConfigHighLevel {
 	return ConfigHighLevel{
 		MatadataBrokerList: "localhost",
 
@@ -89,7 +89,7 @@ type ConfigMediumLevel struct {
 	BrockerVersionFallback string `json:"broker.version.fallback"`
 }
 
-func DefaultKafkaConfigMedium() ConfigMediumLevel {
+func DefaultConfigMedium() ConfigMediumLevel {
 	return ConfigMediumLevel{
 		MessageMaxBytes:        1e6,
 		ReceiveMessageMaxBytes: 1e8,
@@ -386,7 +386,7 @@ type ConfigLowLevel struct {
 	Interceptors interface{} `json:"-"`
 }
 
-func DefaultKafkaConfigLow() ConfigLowLevel {
+func DefaultConfigLow() ConfigLowLevel {
 	return ConfigLowLevel{
 		BuiltInFeatures: "gzip, snappy, ssl, sasl, regex, lz4, sasl_gssapi, sasl_plain, sasl_scram, plugins, zstd, sasl_oauthbearer",
 		ClientID:        "rdkafka",
@@ -485,8 +485,8 @@ type Config struct {
 
 func DefaultKafkaConfig() Config {
 	return Config{
-		ConfigHighLevel:   DefaultKafkaConfigHigh(),
-		ConfigMediumLevel: DefaultKafkaConfigMedium(),
-		ConfigLowLevel:    DefaultKafkaConfigLow(),
+		ConfigHighLevel:   DefaultConfigHigh(),
+		ConfigMediumLevel: DefaultConfigMedium(),
+		ConfigLowLevel:    DefaultConfigLow(),
 	}
 }
