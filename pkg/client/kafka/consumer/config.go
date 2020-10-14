@@ -226,8 +226,8 @@ type Config struct {
 	logger      *xlog.Logger
 }
 
-func DefaultKafkaConfig() Config {
-	return Config{
+func DefaultKafkaConfig() *Config {
+	return &Config{
 		KafkaConfig: kafkaConfig{
 			ConfigHighLevel:      DefaultConfigHigh(),
 			ConfigMediumLevel:    DefaultConfigMedium(),
@@ -242,7 +242,7 @@ func DefaultKafkaConfig() Config {
 }
 
 // RawKafkaConfig ...
-func RawKafkaConfig(key string) Config {
+func RawKafkaConfig(key string) *Config {
 	var config = DefaultKafkaConfig()
 
 	if err := conf.UnmarshalKey(key, &config); err != nil {
@@ -255,7 +255,7 @@ func RawKafkaConfig(key string) Config {
 }
 
 // StdKafkaConfig ...
-func StdKafkaConfig(name string) Config {
+func StdKafkaConfig(name string) *Config {
 	return RawKafkaConfig("jupiter.kafka.consumer." + name)
 }
 
