@@ -4,11 +4,10 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/douyu/jupiter/pkg/client/kafka/consumer"
-	"github.com/douyu/jupiter/pkg/client/kafka/producer"
+	"github.com/douyu/jupiter/pkg/client/kafka/config"
 )
 
-func runProducer(p *producer.Producer, topics ...string) {
+func runProducer(p *config.Producer, topics ...string) {
 	for _, topic := range topics {
 		for _, word := range []string{"Welcome", "to", "the", "Confluent", "Kafka", "Golang", "client"} {
 			var err = p.ProduceTo(topic, -1, 0, []byte(word))
@@ -21,7 +20,7 @@ func runProducer(p *producer.Producer, topics ...string) {
 	}
 }
 
-func runConsumer(c *consumer.Consumer) {
+func runConsumer(c *config.Consumer) {
 	for {
 		var msg, err = c.ReadMessage(-1)
 		if err != nil {
@@ -30,19 +29,19 @@ func runConsumer(c *consumer.Consumer) {
 		}
 
 		if err == nil {
-			fmt.Printf("Receive: %s: %s\n", msg.TopicPartition, string(msg.Value))
+			go fmt.Printf("Receive: %s: %s\n", msg.TopicPartition, string(msg.Value))
 		}
 	}
 }
 
 func TestKafka(t *testing.T) {
 	var topics = []string{"test_topic1", "test_topic2"}
-	var producerConfig = producer.DefaultKafkaConfig()
+	var producerConfig = config.DefaultProducerConfig()
 
-	var consumerConfig = consumer.DefaultKafkaConfig()
+	var consumerConfig = config.DefaultConsumerConfig()
 	consumerConfig.KafkaConfig.GroupID = "TestConsumerGroup"
 
-	var p = producerConfig.Build()
+	var p = producerConfig.BuildProducer()
 	defer func() {
 		p.Flush(15 * 1000)
 		p.Close()
@@ -68,7 +67,7 @@ func TestKafka(t *testing.T) {
 	p.RunMonitor()
 	go runProducer(p, topics...)
 
-	var c = consumerConfig.Build()
+	var c = consumerConfig.BuildConsumer()
 	c.SubscribeTopics(topics, nil)
 
 	defer c.Close()

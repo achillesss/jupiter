@@ -1,14 +1,17 @@
-package producer
+package config
 
 import (
+	"encoding/json"
+	"fmt"
+
 	"github.com/confluentinc/confluent-kafka-go/kafka"
-	"github.com/douyu/jupiter/pkg/client/kafka/config"
 	"github.com/douyu/jupiter/pkg/conf"
+	file_datasource "github.com/douyu/jupiter/pkg/datasource/file"
 	"github.com/douyu/jupiter/pkg/xlog"
 	"github.com/fatih/structs"
 )
 
-type TopicConfigHighLevel struct {
+type ProducerTopicConfigHighLevel struct {
 	// This field indicates the number of acknowledgements the leader broker must receive from ISR brokers before responding to the request: 0=Broker does not send any response/ack to client, -1 or all=Broker will block until message is committed by all in sync replicas (ISRs). If there are less than min.insync.replicas (broker configuration) in the ISR set the produce request will fail.
 	// range: -1 ~ 1e3
 	// Type: integer
@@ -32,8 +35,8 @@ type TopicConfigHighLevel struct {
 	CompressionCodec string `json:"compression.codec"`
 }
 
-func DefaultTopicConfigHigh() TopicConfigHighLevel {
-	return TopicConfigHighLevel{
+func DefaultProducerTopicConfigHigh() ProducerTopicConfigHighLevel {
+	return ProducerTopicConfigHighLevel{
 		RequestRequiredAcks: -1,
 		MessageTimeoutMs:    3e5,
 		Partitioner:         "consistent_random",
@@ -41,8 +44,8 @@ func DefaultTopicConfigHigh() TopicConfigHighLevel {
 	}
 }
 
-type ConfigHighLevel struct {
-	config.ConfigHighLevel `json:",flatten"`
+type ProducerConfigHighLevel struct {
+	ConfigHighLevel `json:",flatten"`
 
 	// Enables the transactional producer. The transactional.id is used to identify the same transactional producer instance across process restarts. It allows the producer to guarantee that transactions corresponding to earlier instances of the same producer have been finalized prior to starting any new transactions, and that any zombie instances are fenced off. If no transactional.id is provided, then the producer is limited to idempotent delivery (if enable.idempotence is set). Requires broker version >= 0.11.0.
 	// Type: string
@@ -75,9 +78,9 @@ type ConfigHighLevel struct {
 	MessageSendMaxRetries int `json:"message.send.max.retries"`
 }
 
-func DefaultConfigHigh() ConfigHighLevel {
-	return ConfigHighLevel{
-		ConfigHighLevel:           config.DefaultConfigHigh(),
+func DefaultProducerConfigHigh() ProducerConfigHighLevel {
+	return ProducerConfigHighLevel{
+		ConfigHighLevel:           DefaultConfigHigh(),
 		TransactionalID:           "",
 		EnableIdempotence:         false,
 		QueueBufferingMaxMessages: 1e5,
@@ -87,7 +90,7 @@ func DefaultConfigHigh() ConfigHighLevel {
 	}
 }
 
-type TopicConfigMediumLevel struct {
+type ProducerTopicConfigMediumLevel struct {
 	// The ack timeout of the producer request in milliseconds. This value is only enforced by the broker and relies on request.required.acks being != 0.
 	// range 1 ~ 9e5
 	// Type: integer
@@ -99,15 +102,15 @@ type TopicConfigMediumLevel struct {
 	CompressionLevel int `json:"compression.level"`
 }
 
-func DefaultTopicConfigMedium() TopicConfigMediumLevel {
-	return TopicConfigMediumLevel{
+func DefaultProducerTopicConfigMedium() ProducerTopicConfigMediumLevel {
+	return ProducerTopicConfigMediumLevel{
 		RequestTimeoutMs: 3e4,
 		CompressionLevel: -1,
 	}
 }
 
-type ConfigMediumLevel struct {
-	config.ConfigMediumLevel `json:",flatten"`
+type ProducerConfigMediumLevel struct {
+	ConfigMediumLevel `json:",flatten"`
 
 	// The maximum amount of time in milliseconds that the transaction coordinator will wait for a transaction status update from the producer before proactively aborting the ongoing transaction. If this value is larger than the transaction.max.timeout.ms setting in the broker, the init_transactions() call will fail with ERR_INVALID_TRANSACTION_TIMEOUT. The transaction timeout automatically adjusts message.timeout.ms and socket.timeout.ms, unless explicitly configured in which case they must not exceed the transaction timeout (socket.timeout.ms must be at least 100ms lower than transaction.timeout.ms). This is also the default timeout value if no timeout (-1) is supplied to the transactional API methods.
 	// range: 1e3 ~ 2147483647
@@ -138,9 +141,9 @@ type ConfigMediumLevel struct {
 	// BatchSize int `json:"batch.size"`
 }
 
-func DefaultConfigMedium() ConfigMediumLevel {
-	return ConfigMediumLevel{
-		ConfigMediumLevel:    config.DefaultConfigMedium(),
+func DefaultProducerConfigMedium() ProducerConfigMediumLevel {
+	return ProducerConfigMediumLevel{
+		ConfigMediumLevel:    DefaultConfigMedium(),
 		TransactionTimeoutMs: 6e4,
 		RetryBackoffMs:       100,
 		CompressionCodec:     "none",
@@ -159,8 +162,8 @@ func DefaultConfigMedium() ConfigMediumLevel {
 // 	return TopicConfigLowLevel{}
 // }
 
-type ConfigLowLevel struct {
-	config.ConfigLowLevel `json:",flatten"`
+type ProducerConfigLowLevel struct {
+	ConfigLowLevel `json:",flatten"`
 
 	// EXPERIMENTAL: subject to change or removal. When set to true, any error that could result in a gap in the produced message series when a batch of messages fails, will raise a fatal error (ERR__GAPLESS_GUARANTEE) and stop the producer. Messages failing due to message.timeout.ms are not covered by this guarantee. Requires enable.idempotence=true.
 	// Type: boolean
@@ -184,69 +187,77 @@ type ConfigLowLevel struct {
 	DrMsgCb interface{} `json:"-"`
 }
 
-func DefaultConfigLow() ConfigLowLevel {
-	return ConfigLowLevel{
-		ConfigLowLevel:                      config.DefaultConfigLow(),
+func DefaultProducerConfigLow() ProducerConfigLowLevel {
+	return ProducerConfigLowLevel{
+		ConfigLowLevel:                      DefaultConfigLow(),
 		EnableGaplessGuarantee:              false,
 		QueueBufferingBackpressureThreshold: 1,
 		DeliveryReportOnlyError:             false,
 	}
 }
 
-type kafkaConfig struct {
-	ConfigHighLevel        `json:",flatten"`
-	ConfigMediumLevel      `json:",flatten"`
-	ConfigLowLevel         `json:",flatten"`
-	TopicConfigHighLevel   `json:",flatten"`
-	TopicConfigMediumLevel `json:",flatten"`
+type kafkaProducerConfig struct {
+	ProducerConfigHighLevel        `json:",flatten"`
+	ProducerConfigMediumLevel      `json:",flatten"`
+	ProducerConfigLowLevel         `json:",flatten"`
+	ProducerTopicConfigHighLevel   `json:",flatten"`
+	ProducerTopicConfigMediumLevel `json:",flatten"`
 	// TopicConfigLowLevel    `json:",flatten"`
 }
 
-type Config struct {
-	KafkaConfig kafkaConfig `json:"kafka_config"`
+type ProducerConfig struct {
+	KafkaConfig kafkaProducerConfig `json:"kafka_config"`
 	logger      *xlog.Logger
 }
 
-func DefaultKafkaConfig() *Config {
-	return &Config{
-		KafkaConfig: kafkaConfig{
-			ConfigHighLevel:        DefaultConfigHigh(),
-			ConfigMediumLevel:      DefaultConfigMedium(),
-			ConfigLowLevel:         DefaultConfigLow(),
-			TopicConfigHighLevel:   DefaultTopicConfigHigh(),
-			TopicConfigMediumLevel: DefaultTopicConfigMedium(),
+func DefaultProducerConfig() *ProducerConfig {
+	return &ProducerConfig{
+		KafkaConfig: kafkaProducerConfig{
+			ProducerConfigHighLevel:        DefaultProducerConfigHigh(),
+			ProducerConfigMediumLevel:      DefaultProducerConfigMedium(),
+			ProducerConfigLowLevel:         DefaultProducerConfigLow(),
+			ProducerTopicConfigHighLevel:   DefaultProducerTopicConfigHigh(),
+			ProducerTopicConfigMediumLevel: DefaultProducerTopicConfigMedium(),
 		},
 		// TopicConfigLowLevel:    DefaultTopicConfigLow(),
 		logger: xlog.JupiterLogger,
 	}
 }
 
-// RawKafkaConfig ...
-func RawKafkaConfig(key string) *Config {
-	var config = DefaultKafkaConfig()
-
-	if err := conf.UnmarshalKey(key, &config); err != nil {
-		xlog.Panic("unmarshal kafkaConfig",
-			xlog.String("key", key),
-			xlog.Any("kafkaConfig", config),
+// StdKafkaConfig ...
+func StdProducerConfig(path string) *ProducerConfig {
+	fmt.Printf("read path: %v\n", path)
+	var cf = DefaultProducerConfig()
+	provider := file_datasource.NewDataSource(path, true)
+	var c = conf.New()
+	if err := c.LoadFromDataSource(provider, json.Unmarshal); err != nil {
+		xlog.Panic("unmarshal kafka config",
+			xlog.String("path", path),
+			xlog.Any("kafka config", path),
 			xlog.String("error", err.Error()))
 	}
-	return config
-}
 
-// StdKafkaConfig ...
-func StdKafkaConfig(name string) *Config {
-	return RawKafkaConfig("jupiter.kafka.producer." + name)
+	var val ProducerConfigHighLevel
+	// var val = make(map[string]interface{})
+	if err := c.UnmarshalKey("", &val, conf.TagName("json")); err != nil {
+		xlog.Panic("unmarshal kafka config",
+			xlog.String("path", path),
+			xlog.Any("kafka config", path),
+			xlog.String("error", err.Error()))
+	}
+
+	fmt.Printf("read kafka config: %v\n", val)
+	return cf
 }
 
 // Build ...
-func (config *Config) Build() *Producer {
+func (config *ProducerConfig) BuildProducer() *Producer {
 	if config == nil {
 		return nil
 	}
 
 	var producer Producer
-	producer.Config = config
+	producer.ProducerConfig = config
 
 	structs.DefaultTagName = "json"
 	var m = structs.Map(config.KafkaConfig)
@@ -265,3 +276,57 @@ func (config *Config) Build() *Producer {
 	producer.Producer = p
 	return &producer
 }
+
+type Producer struct {
+	*ProducerConfig
+	*kafka.Producer
+}
+
+func (p *Producer) ProduceTo(topic string, partition int32, offset kafka.Offset, data []byte) error {
+	return p.Producer.Produce(
+		&kafka.Message{
+			TopicPartition: kafka.TopicPartition{
+				Topic:     &topic,
+				Partition: partition,
+				Offset:    offset,
+			},
+			Value: data,
+		},
+		nil,
+	)
+}
+
+func (p *Producer) ReadProducedEvent() {
+	e := <-p.Events()
+	switch ev := e.(type) {
+	case *kafka.Message:
+		if ev.TopicPartition.Error != nil {
+			fmt.Printf("Produce failed: %v\n", ev.TopicPartition)
+			return
+		}
+
+		fmt.Printf("Produce msg: %+v\n", ev.TopicPartition)
+	}
+}
+
+func (p *Producer) RunMonitor() {
+	go func() {
+		for {
+			p.ReadProducedEvent()
+		}
+	}()
+}
+
+/*
+func (p *Producer) NewAdminClient() *admin.Admin {
+	var a, err = kafka.NewAdminClientFromProducer(p.Producer)
+	if err != nil {
+		p.logger.Panic("new kafka admin failed", xlog.String("error", err.Error()))
+		return nil
+	}
+
+	var ac admin.Admin
+	ac.AdminClient = a
+	return &ac
+}
+*/

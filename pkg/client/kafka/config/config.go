@@ -5,7 +5,7 @@ type ConfigHighLevel struct {
 	// kafka broker 地址
 	// 对应为 metadata.broker.list 或 bootstrap.servers
 	// alias: bootstrap.servers
-	MatadataBrokerList string `json:"metadata.broker.list"`
+	MetadataBrokerList string `json:"metadata.broker.list"`
 
 	// librdkafka statistics emit interval. The application also needs to register a stats callback using rd_kafka_conf_set_stats_cb(). The granularity is 1000ms. A value of 0 disables statistics.
 	// range: 0 ~ 86400e3
@@ -37,7 +37,7 @@ type ConfigHighLevel struct {
 
 func DefaultConfigHigh() ConfigHighLevel {
 	return ConfigHighLevel{
-		MatadataBrokerList:   "localhost",
+		MetadataBrokerList:   "localhost",
 		StatisticsIntervalMs: 0,
 		ApiVersionRequest:    true,
 		SecurityProtocol:     "PLAINTEXT",
@@ -436,7 +436,7 @@ type Config struct {
 	ConfigLowLevel
 }
 
-func DefaultKafkaConfig() Config {
+func DefaultConfig() Config {
 	return Config{
 		ConfigHighLevel:   DefaultConfigHigh(),
 		ConfigMediumLevel: DefaultConfigMedium(),

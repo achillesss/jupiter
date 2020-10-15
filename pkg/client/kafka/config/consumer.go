@@ -1,28 +1,27 @@
-package consumer
+package config
 
 import (
 	"github.com/confluentinc/confluent-kafka-go/kafka"
-	"github.com/douyu/jupiter/pkg/client/kafka/config"
 	"github.com/douyu/jupiter/pkg/conf"
 	"github.com/douyu/jupiter/pkg/xlog"
 	"github.com/gqcn/structs"
 )
 
-type TopicConfigHighLevel struct {
+type ConsumerTopicConfigHighLevel struct {
 	// Action to take when there is no initial offset in offset store or the desired offset is out of range: 'smallest','earliest' - automatically reset the offset to the smallest offset, 'largest','latest' - automatically reset the offset to the largest offset, 'error' - trigger an error which is retrieved by consuming messages and checking 'message->err'.
 	// smallest, earliest, beginning, largest, latest, end, error
 	// Type: enum value
 	AutoOffsetReset string `json:"auto.offset.reset"`
 }
 
-func DefaultTopicConfigHigh() TopicConfigHighLevel {
-	return TopicConfigHighLevel{
+func DefaultConsumerTopicConfigHigh() ConsumerTopicConfigHighLevel {
+	return ConsumerTopicConfigHighLevel{
 		AutoOffsetReset: "earliest",
 	}
 }
 
-type ConfigHighLevel struct {
-	config.ConfigHighLevel `json:",flatten"`
+type ConsumerConfigHighLevel struct {
+	ConfigHighLevel `json:",flatten"`
 
 	// Client group id string. All clients sharing the same group.id belong to the same group.
 	// Type: string
@@ -52,9 +51,9 @@ type ConfigHighLevel struct {
 	IsolationLevel string `json:"isolation.level"`
 }
 
-func DefaultConfigHigh() ConfigHighLevel {
-	return ConfigHighLevel{
-		ConfigHighLevel:       config.DefaultConfigHigh(),
+func DefaultConsumerConfigHigh() ConsumerConfigHighLevel {
+	return ConsumerConfigHighLevel{
+		ConfigHighLevel:       DefaultConfigHigh(),
 		GroupID:               "",
 		SessionTimeoutMs:      1e4,
 		MaxPollIntervalMs:     3e5,
@@ -70,8 +69,8 @@ func DefaultConfigHigh() ConfigHighLevel {
 // 	return TopicConfigMediumLevel{}
 // }
 
-type ConfigMediumLevel struct {
-	config.ConfigMediumLevel `json:",flatten"`
+type ConsumerConfigMediumLevel struct {
+	ConfigMediumLevel `json:",flatten"`
 
 	// Enable static group membership. Static group members are able to leave and rejoin a group within the configured session.timeout.ms without prompting a group rebalance. This should be used in combination with a larger session.timeout.ms to avoid group rebalances caused by transient unavailability (e.g. process restarts). Requires broker version >= 2.3.0.
 	// Type: string
@@ -117,9 +116,9 @@ type ConfigMediumLevel struct {
 	CheckCrcs bool `json:"check.crcs"`
 }
 
-func DefaultConfigMedium() ConfigMediumLevel {
-	return ConfigMediumLevel{
-		ConfigMediumLevel:           config.DefaultConfigMedium(),
+func DefaultConsumerConfigMedium() ConsumerConfigMediumLevel {
+	return ConsumerConfigMediumLevel{
+		ConfigMediumLevel:           DefaultConfigMedium(),
 		GroupInstanceId:             "",
 		PartitionAssignmentStrategy: "range,roundrobin",
 		AutoCommitIntervalMs:        5e3,
@@ -131,21 +130,21 @@ func DefaultConfigMedium() ConfigMediumLevel {
 	}
 }
 
-type TopicConfigLowLevel struct {
+type ConsumerTopicConfigLowLevel struct {
 	// Maximum number of messages to dispatch in one rd_kafka_consume_callback*() call (0 = unlimited)
 	// range: 0 ~ 1e6
 	// Type: integer
 	ConsumeCallbackMaxMessages int `json:"consume.callback.max.messages"`
 }
 
-func DefaultTopicConfigLow() TopicConfigLowLevel {
-	return TopicConfigLowLevel{
+func DefaultConsumerTopicConfigLow() ConsumerTopicConfigLowLevel {
+	return ConsumerTopicConfigLowLevel{
 		ConsumeCallbackMaxMessages: 0,
 	}
 }
 
-type ConfigLowLevel struct {
-	config.ConfigLowLevel `json:",flatten"`
+type ConsumerConfigLowLevel struct {
+	ConfigLowLevel `json:",flatten"`
 
 	// Group session keepalive heartbeat interval.
 	// range: 1 ~ 3.6e6
@@ -198,9 +197,9 @@ type ConfigLowLevel struct {
 	ClientRack string `json:"client.rack"`
 }
 
-func DefaultConfigLow() ConfigLowLevel {
-	return ConfigLowLevel{
-		ConfigLowLevel:             config.DefaultConfigLow(),
+func DefaultConsumerConfigLow() ConsumerConfigLowLevel {
+	return ConsumerConfigLowLevel{
+		ConfigLowLevel:             DefaultConfigLow(),
 		HeartbeatIntervalMs:        3e3,
 		GroupProtocolType:          "consumer",
 		CoordinatorQueryIntervalMs: 6e5,
@@ -212,40 +211,40 @@ func DefaultConfigLow() ConfigLowLevel {
 	}
 }
 
-type kafkaConfig struct {
-	ConfigHighLevel      `json:",flatten"`
-	ConfigMediumLevel    `json:",flatten"`
-	ConfigLowLevel       `json:",flatten"`
-	TopicConfigHighLevel `json:",flatten"`
+type kafkaConsumerConfig struct {
+	ConsumerConfigHighLevel      `json:",flatten"`
+	ConsumerConfigMediumLevel    `json:",flatten"`
+	ConsumerConfigLowLevel       `json:",flatten"`
+	ConsumerTopicConfigHighLevel `json:",flatten"`
 	// 	TopicConfigMediumLevel `json:",flatten"`
-	TopicConfigLowLevel `json:",flatten"`
+	ConsumerTopicConfigLowLevel `json:",flatten"`
 }
 
-type Config struct {
-	KafkaConfig kafkaConfig `json:"kafka_config"`
+type ConsumerConfig struct {
+	KafkaConfig kafkaConsumerConfig `json:"kafka_config"`
 	logger      *xlog.Logger
 }
 
-func DefaultKafkaConfig() *Config {
-	return &Config{
-		KafkaConfig: kafkaConfig{
-			ConfigHighLevel:      DefaultConfigHigh(),
-			ConfigMediumLevel:    DefaultConfigMedium(),
-			ConfigLowLevel:       DefaultConfigLow(),
-			TopicConfigHighLevel: DefaultTopicConfigHigh(),
-			// TopicConfigMediumLevel: DefaultTopicConfigMedium(),
-			TopicConfigLowLevel: DefaultTopicConfigLow(),
+func DefaultConsumerConfig() *ConsumerConfig {
+	return &ConsumerConfig{
+		KafkaConfig: kafkaConsumerConfig{
+			ConsumerConfigHighLevel:      DefaultConsumerConfigHigh(),
+			ConsumerConfigMediumLevel:    DefaultConsumerConfigMedium(),
+			ConsumerConfigLowLevel:       DefaultConsumerConfigLow(),
+			ConsumerTopicConfigHighLevel: DefaultConsumerTopicConfigHigh(),
+			// ConsumerTopicConfigMediumLevel: DefaultTopicConfigMedium(),
+			ConsumerTopicConfigLowLevel: DefaultConsumerTopicConfigLow(),
 		},
 
 		logger: xlog.JupiterLogger,
 	}
 }
 
-// RawKafkaConfig ...
-func RawKafkaConfig(key string) *Config {
-	var config = DefaultKafkaConfig()
+// RawConsumerConfig ...
+func RawConsumerConfig(key string) *ConsumerConfig {
+	var config = DefaultConsumerConfig()
 
-	if err := conf.UnmarshalKey(key, &config); err != nil {
+	if err := conf.UnmarshalKey(key, config); err != nil {
 		xlog.Panic("unmarshal kafkaConfig",
 			xlog.String("key", key),
 			xlog.Any("kafkaConfig", config),
@@ -254,19 +253,19 @@ func RawKafkaConfig(key string) *Config {
 	return config
 }
 
-// StdKafkaConfig ...
-func StdKafkaConfig(name string) *Config {
-	return RawKafkaConfig("jupiter.kafka.consumer." + name)
+// StdConsumerConfig ...
+func StdConsumerConfig(name string) *ConsumerConfig {
+	return RawConsumerConfig("jupiter.kafka.consumer." + name)
 }
 
 // Build ...
-func (config *Config) Build() *Consumer {
+func (config *ConsumerConfig) BuildConsumer() *Consumer {
 	if config == nil {
 		return nil
 	}
 
 	var consumer Consumer
-	consumer.Config = config
+	consumer.ConsumerConfig = config
 
 	structs.DefaultTagName = "json"
 	var m = structs.Map(config.KafkaConfig)
@@ -284,4 +283,9 @@ func (config *Config) Build() *Consumer {
 
 	consumer.Consumer = c
 	return &consumer
+}
+
+type Consumer struct {
+	*ConsumerConfig
+	*kafka.Consumer
 }
