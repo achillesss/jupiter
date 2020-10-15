@@ -45,7 +45,7 @@ func DefaultProducerTopicConfigHigh() ProducerTopicConfigHighLevel {
 }
 
 type ProducerConfigHighLevel struct {
-	ConfigHighLevel `json:",flatten"`
+	ConfigHighLevel `json:"config_high_level,flatten"`
 
 	// Enables the transactional producer. The transactional.id is used to identify the same transactional producer instance across process restarts. It allows the producer to guarantee that transactions corresponding to earlier instances of the same producer have been finalized prior to starting any new transactions, and that any zombie instances are fenced off. If no transactional.id is provided, then the producer is limited to idempotent delivery (if enable.idempotence is set). Requires broker version >= 0.11.0.
 	// Type: string
@@ -110,7 +110,7 @@ func DefaultProducerTopicConfigMedium() ProducerTopicConfigMediumLevel {
 }
 
 type ProducerConfigMediumLevel struct {
-	ConfigMediumLevel `json:",flatten"`
+	ConfigMediumLevel `json:"config_medium_level,flatten"`
 
 	// The maximum amount of time in milliseconds that the transaction coordinator will wait for a transaction status update from the producer before proactively aborting the ongoing transaction. If this value is larger than the transaction.max.timeout.ms setting in the broker, the init_transactions() call will fail with ERR_INVALID_TRANSACTION_TIMEOUT. The transaction timeout automatically adjusts message.timeout.ms and socket.timeout.ms, unless explicitly configured in which case they must not exceed the transaction timeout (socket.timeout.ms must be at least 100ms lower than transaction.timeout.ms). This is also the default timeout value if no timeout (-1) is supplied to the transactional API methods.
 	// range: 1e3 ~ 2147483647
@@ -163,7 +163,7 @@ func DefaultProducerConfigMedium() ProducerConfigMediumLevel {
 // }
 
 type ProducerConfigLowLevel struct {
-	ConfigLowLevel `json:",flatten"`
+	ConfigLowLevel `json:"config_low_level,flatten"`
 
 	// EXPERIMENTAL: subject to change or removal. When set to true, any error that could result in a gap in the produced message series when a batch of messages fails, will raise a fatal error (ERR__GAPLESS_GUARANTEE) and stop the producer. Messages failing due to message.timeout.ms are not covered by this guarantee. Requires enable.idempotence=true.
 	// Type: boolean
@@ -197,11 +197,11 @@ func DefaultProducerConfigLow() ProducerConfigLowLevel {
 }
 
 type kafkaProducerConfig struct {
-	ProducerConfigHighLevel        `json:",flatten"`
-	ProducerConfigMediumLevel      `json:",flatten"`
-	ProducerConfigLowLevel         `json:",flatten"`
-	ProducerTopicConfigHighLevel   `json:",flatten"`
-	ProducerTopicConfigMediumLevel `json:",flatten"`
+	ProducerConfigHighLevel        `json:"producer_config_high_level,flatten"`
+	ProducerConfigMediumLevel      `json:"producer_config_medium_level,flatten"`
+	ProducerConfigLowLevel         `json:"producer_config_low_level,flatten"`
+	ProducerTopicConfigHighLevel   `json:"producer_topic_config_high_level,flatten"`
+	ProducerTopicConfigMediumLevel `json:"producer_topic_config_medium_level,flatten"`
 	// TopicConfigLowLevel    `json:",flatten"`
 }
 
@@ -226,7 +226,6 @@ func DefaultProducerConfig() *ProducerConfig {
 
 // StdKafkaConfig ...
 func StdProducerConfig(path string) *ProducerConfig {
-	fmt.Printf("read path: %v\n", path)
 	var cf = DefaultProducerConfig()
 	provider := file_datasource.NewDataSource(path, true)
 	var c = conf.New()
@@ -237,16 +236,13 @@ func StdProducerConfig(path string) *ProducerConfig {
 			xlog.String("error", err.Error()))
 	}
 
-	var val ProducerConfigHighLevel
-	// var val = make(map[string]interface{})
-	if err := c.UnmarshalKey("", &val, conf.TagName("json")); err != nil {
+	if err := c.UnmarshalKey("", &cf.KafkaConfig, conf.TagName("json")); err != nil {
 		xlog.Panic("unmarshal kafka config",
 			xlog.String("path", path),
 			xlog.Any("kafka config", path),
 			xlog.String("error", err.Error()))
 	}
 
-	fmt.Printf("read kafka config: %v\n", val)
 	return cf
 }
 
@@ -265,6 +261,10 @@ func (config *ProducerConfig) BuildProducer() *Producer {
 	var kafkaConf = make(kafka.ConfigMap)
 	for k, v := range m {
 		kafkaConf.SetKey(k, v)
+	}
+
+	for k, v := range m {
+		fmt.Printf("%s: %v\n", k, v)
 	}
 
 	var p, err = kafka.NewProducer(&kafkaConf)

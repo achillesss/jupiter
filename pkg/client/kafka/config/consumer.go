@@ -1,8 +1,11 @@
 package config
 
 import (
+	"encoding/json"
+
 	"github.com/confluentinc/confluent-kafka-go/kafka"
 	"github.com/douyu/jupiter/pkg/conf"
+	file_datasource "github.com/douyu/jupiter/pkg/datasource/file"
 	"github.com/douyu/jupiter/pkg/xlog"
 	"github.com/gqcn/structs"
 )
@@ -21,7 +24,7 @@ func DefaultConsumerTopicConfigHigh() ConsumerTopicConfigHighLevel {
 }
 
 type ConsumerConfigHighLevel struct {
-	ConfigHighLevel `json:",flatten"`
+	ConfigHighLevel `json:"config_high_level,flatten"`
 
 	// Client group id string. All clients sharing the same group.id belong to the same group.
 	// Type: string
@@ -70,7 +73,7 @@ func DefaultConsumerConfigHigh() ConsumerConfigHighLevel {
 // }
 
 type ConsumerConfigMediumLevel struct {
-	ConfigMediumLevel `json:",flatten"`
+	ConfigMediumLevel `json:"config_medium_level,flatten"`
 
 	// Enable static group membership. Static group members are able to leave and rejoin a group within the configured session.timeout.ms without prompting a group rebalance. This should be used in combination with a larger session.timeout.ms to avoid group rebalances caused by transient unavailability (e.g. process restarts). Requires broker version >= 2.3.0.
 	// Type: string
@@ -144,7 +147,7 @@ func DefaultConsumerTopicConfigLow() ConsumerTopicConfigLowLevel {
 }
 
 type ConsumerConfigLowLevel struct {
-	ConfigLowLevel `json:",flatten"`
+	ConfigLowLevel `json:"config_low_level,flatten"`
 
 	// Group session keepalive heartbeat interval.
 	// range: 1 ~ 3.6e6
@@ -212,12 +215,12 @@ func DefaultConsumerConfigLow() ConsumerConfigLowLevel {
 }
 
 type kafkaConsumerConfig struct {
-	ConsumerConfigHighLevel      `json:",flatten"`
-	ConsumerConfigMediumLevel    `json:",flatten"`
-	ConsumerConfigLowLevel       `json:",flatten"`
-	ConsumerTopicConfigHighLevel `json:",flatten"`
+	ConsumerConfigHighLevel      `json:"consumer_config_high_level,flatten"`
+	ConsumerConfigMediumLevel    `json:"consumer_config_medium_level,flatten"`
+	ConsumerConfigLowLevel       `json:"consumer_config_low_level,flatten"`
+	ConsumerTopicConfigHighLevel `json:"consumer_topic_config_high_level,flatten"`
 	// 	TopicConfigMediumLevel `json:",flatten"`
-	ConsumerTopicConfigLowLevel `json:",flatten"`
+	ConsumerTopicConfigLowLevel `json:"consumer_topic_config_low_level,flatten"`
 }
 
 type ConsumerConfig struct {
@@ -240,22 +243,26 @@ func DefaultConsumerConfig() *ConsumerConfig {
 	}
 }
 
-// RawConsumerConfig ...
-func RawConsumerConfig(key string) *ConsumerConfig {
-	var config = DefaultConsumerConfig()
-
-	if err := conf.UnmarshalKey(key, config); err != nil {
-		xlog.Panic("unmarshal kafkaConfig",
-			xlog.String("key", key),
-			xlog.Any("kafkaConfig", config),
+// StdConsumerConfig ...
+func StdConsumerConfig(path string) *ConsumerConfig {
+	var cf = DefaultConsumerConfig()
+	provider := file_datasource.NewDataSource(path, true)
+	var c = conf.New()
+	if err := c.LoadFromDataSource(provider, json.Unmarshal); err != nil {
+		xlog.Panic("unmarshal kafka config",
+			xlog.String("path", path),
+			xlog.Any("kafka config", path),
 			xlog.String("error", err.Error()))
 	}
-	return config
-}
 
-// StdConsumerConfig ...
-func StdConsumerConfig(name string) *ConsumerConfig {
-	return RawConsumerConfig("jupiter.kafka.consumer." + name)
+	if err := c.UnmarshalKey("", &cf.KafkaConfig, conf.TagName("json")); err != nil {
+		xlog.Panic("unmarshal kafka config",
+			xlog.String("path", path),
+			xlog.Any("kafka config", path),
+			xlog.String("error", err.Error()))
+	}
+
+	return cf
 }
 
 // Build ...

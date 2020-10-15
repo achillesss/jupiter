@@ -429,17 +429,3 @@ func DefaultConfigLow() ConfigLowLevel {
 		// TopicMetadataPropagationMaxMs: 3e5,
 	}
 }
-
-type Config struct {
-	ConfigHighLevel
-	ConfigMediumLevel
-	ConfigLowLevel
-}
-
-func DefaultConfig() Config {
-	return Config{
-		ConfigHighLevel:   DefaultConfigHigh(),
-		ConfigMediumLevel: DefaultConfigMedium(),
-		ConfigLowLevel:    DefaultConfigLow(),
-	}
-}

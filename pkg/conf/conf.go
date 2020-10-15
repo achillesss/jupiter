@@ -366,9 +366,7 @@ func (c *Configuration) UnmarshalKey(key string, rawVal interface{}, opts ...Get
 	if key == "" {
 		c.mu.RLock()
 		defer c.mu.RUnlock()
-		err = decoder.Decode(c.override)
-		fmt.Printf("rawVal: %v\n", rawVal)
-		return err
+		return decoder.Decode(c.override)
 	}
 
 	value := c.Get(key)
