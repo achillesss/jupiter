@@ -263,10 +263,6 @@ func (config *ProducerConfig) BuildProducer() *Producer {
 		kafkaConf.SetKey(k, v)
 	}
 
-	for k, v := range m {
-		fmt.Printf("%s: %v\n", k, v)
-	}
-
 	var p, err = kafka.NewProducer(&kafkaConf)
 	if err != nil {
 		config.logger.Panic("new kafka producer failed", xlog.String("error", err.Error()))
