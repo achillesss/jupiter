@@ -111,10 +111,11 @@ func statusFromString(s string) (*statusErr, bool) {
 	return &statusErr{
 		&rstatus.Status{
 			Code:    int32(u64),
-			Message: s[i:],
+			Message: strings.TrimPrefix(s[i:], ":"),
 			Details: []*any.Any{},
 		},
 	}, true
+
 }
 func createStatusErr(code uint32, msg string) string {
 	return fmt.Sprintf("%d:%s", code, msg)

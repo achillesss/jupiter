@@ -2,7 +2,6 @@ package config
 
 import (
 	"encoding/json"
-	"fmt"
 
 	"github.com/confluentinc/confluent-kafka-go/kafka"
 	"github.com/douyu/jupiter/pkg/conf"
@@ -297,11 +296,11 @@ func (p *Producer) ReadProducedEvent() {
 	switch ev := e.(type) {
 	case *kafka.Message:
 		if ev.TopicPartition.Error != nil {
-			fmt.Printf("Produce failed: %v\n", ev.TopicPartition)
+			p.ProducerConfig.logger.Error("kafka", xlog.Any("produce", ev.TopicPartition))
 			return
 		}
 
-		fmt.Printf("Produce msg: %+v\n", ev.TopicPartition)
+		p.ProducerConfig.logger.Info("kafka", xlog.Any("produce", ev.TopicPartition))
 	}
 }
 

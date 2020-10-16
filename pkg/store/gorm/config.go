@@ -123,6 +123,7 @@ func (config *Config) Build() *DB {
 	if config.Debug {
 		config = config.WithInterceptor(debugInterceptor)
 	}
+
 	if !config.DisableTrace {
 		config = config.WithInterceptor(traceInterceptor)
 	}
