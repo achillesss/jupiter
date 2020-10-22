@@ -72,7 +72,13 @@ func newServer(config *Config) *Server {
 			config.logger.Panic("new grpc gateway server err", xlog.FieldErrKind(ecode.ErrKindListenErr), xlog.FieldErr(err))
 		}
 
-		var muxOptions []runtime.ServeMuxOption
+		var muxOptions = []runtime.ServeMuxOption{
+			runtime.WithMarshalerOption(runtime.MIMEWildcard, &runtime.JSONPb{
+				EmitDefaults: true,
+				EnumsAsInts:  true,
+			}),
+		}
+
 		if config.withMetadataFunc != nil {
 			muxOptions = append(muxOptions, runtime.WithMetadata(config.withMetadataFunc))
 		}
