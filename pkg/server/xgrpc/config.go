@@ -17,6 +17,7 @@ package xgrpc
 import (
 	"context"
 	"fmt"
+	"net/http"
 
 	"github.com/douyu/jupiter/pkg/constant"
 	"github.com/douyu/jupiter/pkg/ecode"
@@ -26,6 +27,7 @@ import (
 	"github.com/douyu/jupiter/pkg/conf"
 
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/metadata"
 )
 
 // Config ...
@@ -48,7 +50,8 @@ type Config struct {
 	serverOptions      []grpc.ServerOption
 	streamInterceptors []grpc.StreamServerInterceptor
 	unaryInterceptors  []grpc.UnaryServerInterceptor
-	gatewayRegister    func(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)
+	gwRegister         func(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)
+	withMetadataFunc   func(context.Context, *http.Request) metadata.MD
 
 	logger *xlog.Logger
 }
@@ -91,9 +94,10 @@ func DefaultConfig() *Config {
 	}
 }
 
-func (config *Config) WithGatewayRegister(register func(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)) *Config {
+func (config *Config) WithGatewayRegister(register func(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error), withMetadataFunc func(c context.Context, r *http.Request) metadata.MD) *Config {
 	if register != nil {
-		config.gatewayRegister = register
+		config.gwRegister = register
+		config.withMetadataFunc = withMetadataFunc
 	}
 	return config
 }

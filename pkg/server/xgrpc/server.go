@@ -66,14 +66,20 @@ func newServer(config *Config) *Server {
 	config.Port = listener.Addr().(*net.TCPAddr).Port
 	s.listener = listener
 
-	if config.gatewayRegister != nil && config.GatewayPort != 0 {
+	if config.gwRegister != nil && config.GatewayPort != 0 {
 		gwListener, err := net.Listen(config.Network, config.GwAddress())
 		if err != nil {
 			config.logger.Panic("new grpc gateway server err", xlog.FieldErrKind(ecode.ErrKindListenErr), xlog.FieldErr(err))
 		}
 
-		var mux = runtime.NewServeMux()
-		err = config.gatewayRegister(context.Background(), mux, config.Address(), []grpc.DialOption{grpc.WithInsecure()})
+		var muxOptions []runtime.ServeMuxOption
+		if config.withMetadataFunc != nil {
+			muxOptions = append(muxOptions, runtime.WithMetadata(config.withMetadataFunc))
+		}
+
+		var mux = runtime.NewServeMux(muxOptions...)
+
+		err = config.gwRegister(context.Background(), mux, config.Address(), []grpc.DialOption{grpc.WithInsecure()})
 		if err != nil {
 			config.logger.Panic("register grpc gateway server err", xlog.FieldErrKind(ecode.ErrKindListenErr), xlog.FieldErr(err))
 		}
