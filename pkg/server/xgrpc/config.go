@@ -15,11 +15,13 @@
 package xgrpc
 
 import (
+	"context"
 	"fmt"
 
 	"github.com/douyu/jupiter/pkg/constant"
 	"github.com/douyu/jupiter/pkg/ecode"
 	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 
 	"github.com/douyu/jupiter/pkg/conf"
 
@@ -28,9 +30,10 @@ import (
 
 // Config ...
 type Config struct {
-	Host       string
-	Port       int
-	Deployment string
+	Host        string
+	Port        int
+	GatewayPort int
+	Deployment  string
 	// Network network type, tcp4 by default
 	Network string `json:"network" toml:"network"`
 	// DisableTrace disbale Trace Interceptor, false by default
@@ -45,6 +48,7 @@ type Config struct {
 	serverOptions      []grpc.ServerOption
 	streamInterceptors []grpc.StreamServerInterceptor
 	unaryInterceptors  []grpc.UnaryServerInterceptor
+	gatewayRegister    func(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)
 
 	logger *xlog.Logger
 }
@@ -85,6 +89,13 @@ func DefaultConfig() *Config {
 		streamInterceptors:        []grpc.StreamServerInterceptor{},
 		unaryInterceptors:         []grpc.UnaryServerInterceptor{},
 	}
+}
+
+func (config *Config) WithGatewayRegister(register func(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)) *Config {
+	if register != nil {
+		config.gatewayRegister = register
+	}
+	return config
 }
 
 // WithServerOption inject server option to grpc server
@@ -142,4 +153,9 @@ func (config *Config) WithLogger(logger *xlog.Logger) *Config {
 // Address ...
 func (config Config) Address() string {
 	return fmt.Sprintf("%s:%d", config.Host, config.Port)
+}
+
+// Address ...
+func (config Config) GwAddress() string {
+	return fmt.Sprintf("%s:%d", config.Host, config.GatewayPort)
 }

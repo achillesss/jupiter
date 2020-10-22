@@ -16,12 +16,15 @@ package xgrpc
 
 import (
 	"context"
+	"fmt"
 	"net"
+	"net/http"
 
 	"github.com/douyu/jupiter/pkg/constant"
 	"github.com/douyu/jupiter/pkg/ecode"
 	"github.com/douyu/jupiter/pkg/server"
 	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 
 	"google.golang.org/grpc"
 )
@@ -29,11 +32,15 @@ import (
 // Server ...
 type Server struct {
 	*grpc.Server
-	listener net.Listener
+	listener        net.Listener
+	gatewayListener net.Listener
+	gatewayMux      *runtime.ServeMux
 	*Config
 }
 
 func newServer(config *Config) *Server {
+	var s Server
+	s.Config = config
 	var streamInterceptors = append(
 		[]grpc.StreamServerInterceptor{defaultStreamServerInterceptor(config.logger, config.SlowQueryThresholdInMilli)},
 		config.streamInterceptors...,
@@ -50,23 +57,49 @@ func newServer(config *Config) *Server {
 	)
 
 	newServer := grpc.NewServer(config.serverOptions...)
+	s.Server = newServer
+
 	listener, err := net.Listen(config.Network, config.Address())
 	if err != nil {
 		config.logger.Panic("new grpc server err", xlog.FieldErrKind(ecode.ErrKindListenErr), xlog.FieldErr(err))
 	}
 	config.Port = listener.Addr().(*net.TCPAddr).Port
+	s.listener = listener
 
-	return &Server{
-		Server:   newServer,
-		listener: listener,
-		Config:   config,
+	if config.gatewayRegister != nil && config.GatewayPort != 0 {
+		gwListener, err := net.Listen(config.Network, config.GwAddress())
+		if err != nil {
+			config.logger.Panic("new grpc gateway server err", xlog.FieldErrKind(ecode.ErrKindListenErr), xlog.FieldErr(err))
+		}
+
+		var mux = runtime.NewServeMux()
+		err = config.gatewayRegister(context.Background(), mux, config.Address(), []grpc.DialOption{grpc.WithInsecure()})
+		if err != nil {
+			config.logger.Panic("register grpc gateway server err", xlog.FieldErrKind(ecode.ErrKindListenErr), xlog.FieldErr(err))
+		}
+
+		config.GatewayPort = gwListener.Addr().(*net.TCPAddr).Port
+		s.gatewayListener = gwListener
+		s.gatewayMux = mux
 	}
+
+	return &s
 }
 
 // Server implements server.Server interface.
 func (s *Server) Serve() error {
-	err := s.Server.Serve(s.listener)
-	return err
+	var errChan = make(chan error, 1)
+	if s.gatewayListener != nil {
+		go func() {
+			errChan <- http.Serve(s.gatewayListener, s.gatewayMux)
+		}()
+	}
+
+	go func() {
+		errChan <- s.Server.Serve(s.listener)
+	}()
+
+	return <-errChan
 }
 
 // Stop implements server.Server interface
@@ -88,6 +121,12 @@ func (s *Server) Info() *server.ServiceInfo {
 	serviceAddress := s.listener.Addr().String()
 	if s.Config.ServiceAddress != "" {
 		serviceAddress = s.Config.ServiceAddress
+	}
+
+	var gwAddress string
+	if s.gatewayListener != nil {
+		gwAddress = s.gatewayListener.Addr().String()
+		serviceAddress = fmt.Sprintf("%s,gateway://%s", serviceAddress, gwAddress)
 	}
 
 	info := server.ApplyOptions(
