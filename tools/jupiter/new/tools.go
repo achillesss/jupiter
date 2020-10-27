@@ -23,8 +23,8 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/douyu/jupiter/pkg/util/xcolor"
-	"github.com/douyu/jupiter/tools/jupiter/common"
+	"github.com/achillesss/jupiter/pkg/util/xcolor"
+	"github.com/achillesss/jupiter/tools/jupiter/common"
 
 	"github.com/gobuffalo/packr/v2"
 	"github.com/urfave/cli"

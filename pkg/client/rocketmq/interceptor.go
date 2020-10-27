@@ -19,11 +19,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/imeta"
-	"github.com/douyu/jupiter/pkg/istats"
-	"github.com/douyu/jupiter/pkg/metric"
-	"github.com/douyu/jupiter/pkg/util/xdebug"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/pkg/imeta"
+	"github.com/achillesss/jupiter/pkg/istats"
+	"github.com/achillesss/jupiter/pkg/metric"
+	"github.com/achillesss/jupiter/pkg/util/xdebug"
+	"github.com/achillesss/jupiter/pkg/xlog"
 
 	"github.com/apache/rocketmq-client-go/v2/consumer"
 	"github.com/apache/rocketmq-client-go/v2/primitive"

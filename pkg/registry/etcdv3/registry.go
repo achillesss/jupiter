@@ -24,17 +24,17 @@ import (
 	"sync"
 	"time"
 
-	"github.com/douyu/jupiter/pkg"
-	"github.com/douyu/jupiter/pkg/constant"
+	"github.com/achillesss/jupiter/pkg"
+	"github.com/achillesss/jupiter/pkg/constant"
 
 	"go.etcd.io/etcd/clientv3/concurrency"
 
-	"github.com/douyu/jupiter/pkg/client/etcdv3"
-	"github.com/douyu/jupiter/pkg/ecode"
-	"github.com/douyu/jupiter/pkg/registry"
-	"github.com/douyu/jupiter/pkg/server"
-	"github.com/douyu/jupiter/pkg/util/xgo"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/pkg/client/etcdv3"
+	"github.com/achillesss/jupiter/pkg/ecode"
+	"github.com/achillesss/jupiter/pkg/registry"
+	"github.com/achillesss/jupiter/pkg/server"
+	"github.com/achillesss/jupiter/pkg/util/xgo"
+	"github.com/achillesss/jupiter/pkg/xlog"
 
 	"go.etcd.io/etcd/clientv3"
 	"go.etcd.io/etcd/mvcc/mvccpb"

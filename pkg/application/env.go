@@ -3,7 +3,7 @@ package application
 import (
 	"os"
 
-	"github.com/douyu/jupiter/pkg/flag"
+	"github.com/achillesss/jupiter/pkg/flag"
 )
 
 var (

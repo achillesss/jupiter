@@ -1,10 +1,10 @@
 package admin
 
 import (
+	"github.com/achillesss/jupiter/pkg/client/kafka/config"
+	"github.com/achillesss/jupiter/pkg/conf"
+	"github.com/achillesss/jupiter/pkg/xlog"
 	"github.com/confluentinc/confluent-kafka-go/kafka"
-	"github.com/douyu/jupiter/pkg/client/kafka/config"
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/xlog"
 	"github.com/gqcn/structs"
 )
 

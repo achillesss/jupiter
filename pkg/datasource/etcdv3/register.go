@@ -3,11 +3,11 @@ package etcdv3
 import (
 	"net/url"
 
-	"github.com/douyu/jupiter/pkg/client/etcdv3"
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/datasource/manager"
-	"github.com/douyu/jupiter/pkg/flag"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/pkg/client/etcdv3"
+	"github.com/achillesss/jupiter/pkg/conf"
+	"github.com/achillesss/jupiter/pkg/datasource/manager"
+	"github.com/achillesss/jupiter/pkg/flag"
+	"github.com/achillesss/jupiter/pkg/xlog"
 )
 
 // DataSourceEtcdv3 defines etcdv3 scheme

@@ -24,9 +24,9 @@ import (
 
 	"go.etcd.io/etcd/clientv3/concurrency"
 
-	"github.com/douyu/jupiter/pkg/ecode"
+	"github.com/achillesss/jupiter/pkg/ecode"
 
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/pkg/xlog"
 
 	grpcprom "github.com/grpc-ecosystem/go-grpc-prometheus"
 	"go.etcd.io/etcd/clientv3"

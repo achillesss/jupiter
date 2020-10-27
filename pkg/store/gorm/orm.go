@@ -18,7 +18,7 @@ import (
 	"context"
 	"errors"
 
-	"github.com/douyu/jupiter/pkg/util/xdebug"
+	"github.com/achillesss/jupiter/pkg/util/xdebug"
 
 	"github.com/jinzhu/gorm"
 	// mysql driver

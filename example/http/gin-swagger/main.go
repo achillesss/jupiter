@@ -15,11 +15,11 @@
 package main
 
 import (
-	_ "github.com/douyu/jupiter/example/http/gin-swagger/docs"
-	"github.com/douyu/jupiter/pkg/server/xgin"
-	"github.com/douyu/jupiter/pkg/xlog"
+	_ "github.com/achillesss/jupiter/example/http/gin-swagger/docs"
+	"github.com/achillesss/jupiter/pkg/server/xgin"
+	"github.com/achillesss/jupiter/pkg/xlog"
 
-	"github.com/douyu/jupiter"
+	"github.com/achillesss/jupiter"
 	"github.com/gin-gonic/gin"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"

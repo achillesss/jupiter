@@ -17,10 +17,10 @@ package main
 import (
 	"log"
 
-	"github.com/douyu/jupiter/pkg/server/xgin"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/pkg/server/xgin"
+	"github.com/achillesss/jupiter/pkg/xlog"
 
-	"github.com/douyu/jupiter"
+	"github.com/achillesss/jupiter"
 	"github.com/gin-gonic/gin"
 )
 

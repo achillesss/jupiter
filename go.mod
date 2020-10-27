@@ -1,8 +1,6 @@
-module AEX_SERVICE/aex_jupiter
+module github.com/achillesss/jupiter
 
 go 1.15
-
-replace github.com/douyu/jupiter v0.2.5 => ./
 
 require (
 	github.com/BurntSushi/toml v0.3.1
@@ -15,7 +13,6 @@ require (
 	github.com/codegangsta/inject v0.0.0-20150114235600-33e0aa1cb7c0
 	github.com/confluentinc/confluent-kafka-go v1.4.2
 	github.com/davecgh/go-spew v1.1.1
-	github.com/douyu/jupiter v0.2.5
 	github.com/emicklei/proto v1.9.0
 	github.com/envoyproxy/go-control-plane v0.9.4 // indirect
 	github.com/fatih/structs v1.1.0
@@ -32,7 +29,7 @@ require (
 	github.com/gqcn/structs v1.1.1
 	github.com/grpc-ecosystem/go-grpc-middleware v1.2.0 // indirect
 	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0
-	github.com/grpc-ecosystem/grpc-gateway v1.14.5 // indirect
+	github.com/grpc-ecosystem/grpc-gateway v1.14.5
 	github.com/jinzhu/gorm v1.9.16
 	github.com/jonboulle/clockwork v0.2.2 // indirect
 	github.com/json-iterator/go v1.1.10

@@ -19,8 +19,8 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/douyu/jupiter/pkg/util/xfile"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/pkg/util/xfile"
+	"github.com/achillesss/jupiter/pkg/xlog"
 )
 
 // GetFileName ...

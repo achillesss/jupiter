@@ -18,9 +18,9 @@ import (
 	"encoding/json"
 	"io/ioutil"
 
-	"github.com/douyu/jupiter/pkg"
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/pkg"
+	"github.com/achillesss/jupiter/pkg/conf"
+	"github.com/achillesss/jupiter/pkg/xlog"
 
 	sentinel "github.com/alibaba/sentinel-golang/api"
 	"github.com/alibaba/sentinel-golang/core/base"

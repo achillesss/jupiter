@@ -18,8 +18,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/douyu/jupiter/pkg"
-	"github.com/douyu/jupiter/pkg/server/governor"
+	"github.com/achillesss/jupiter/pkg"
+	"github.com/achillesss/jupiter/pkg/server/governor"
 
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )

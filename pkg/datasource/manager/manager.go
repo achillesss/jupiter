@@ -4,7 +4,7 @@ import (
 	"errors"
 	"net/url"
 
-	"github.com/douyu/jupiter/pkg/conf"
+	"github.com/achillesss/jupiter/pkg/conf"
 )
 
 var (

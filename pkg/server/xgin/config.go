@@ -17,9 +17,9 @@ package xgin
 import (
 	"fmt"
 
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/ecode"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/pkg/conf"
+	"github.com/achillesss/jupiter/pkg/ecode"
+	"github.com/achillesss/jupiter/pkg/xlog"
 
 	"github.com/gin-gonic/gin"
 	"github.com/pkg/errors"

@@ -20,7 +20,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/datasource/apollo/mockserver"
+	"github.com/achillesss/jupiter/pkg/datasource/apollo/mockserver"
 
 	"github.com/philchia/agollo/v4"
 	"github.com/stretchr/testify/assert"

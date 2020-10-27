@@ -20,7 +20,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/util/xp2c"
+	"github.com/achillesss/jupiter/pkg/util/xp2c"
 
 	"google.golang.org/grpc/balancer"
 )

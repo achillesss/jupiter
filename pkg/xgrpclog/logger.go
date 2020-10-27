@@ -3,7 +3,7 @@ package xgrpclog
 import (
 	"fmt"
 
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/pkg/xlog"
 
 	"google.golang.org/grpc/grpclog"
 )

@@ -15,7 +15,7 @@
 package defers
 
 import (
-	"github.com/douyu/jupiter/pkg/util/xdefer"
+	"github.com/achillesss/jupiter/pkg/util/xdefer"
 )
 
 var (

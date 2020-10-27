@@ -18,10 +18,10 @@ import (
 	"context"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/client/etcdv3"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/pkg/client/etcdv3"
+	"github.com/achillesss/jupiter/pkg/xlog"
 
-	"github.com/douyu/jupiter"
+	"github.com/achillesss/jupiter"
 	"go.etcd.io/etcd/clientv3"
 )
 

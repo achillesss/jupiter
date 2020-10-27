@@ -17,13 +17,13 @@ package gorm
 import (
 	"time"
 
-	"github.com/douyu/jupiter/pkg/metric"
+	"github.com/achillesss/jupiter/pkg/metric"
 
-	"github.com/douyu/jupiter/pkg/ecode"
+	"github.com/achillesss/jupiter/pkg/ecode"
 
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/util/xtime"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/pkg/conf"
+	"github.com/achillesss/jupiter/pkg/util/xtime"
+	"github.com/achillesss/jupiter/pkg/xlog"
 )
 
 // StdConfig 标准配置，规范配置文件头

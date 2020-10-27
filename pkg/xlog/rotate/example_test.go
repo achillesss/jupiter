@@ -17,7 +17,7 @@ package rotate_test
 import (
 	"log"
 
-	"github.com/douyu/jupiter/pkg/xlog/rotate"
+	"github.com/achillesss/jupiter/pkg/xlog/rotate"
 )
 
 // To use rotate with the standard library's log package, just pass it into

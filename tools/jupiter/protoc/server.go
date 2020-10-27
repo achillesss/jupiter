@@ -9,8 +9,8 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/douyu/jupiter/pkg/util/xcolor"
-	template2 "github.com/douyu/jupiter/tools/jupiter/protoc/template"
+	"github.com/achillesss/jupiter/pkg/util/xcolor"
+	template2 "github.com/achillesss/jupiter/tools/jupiter/protoc/template"
 
 	"github.com/emicklei/proto"
 )

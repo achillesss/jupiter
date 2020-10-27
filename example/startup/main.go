@@ -17,13 +17,13 @@ package main
 import (
 	"time"
 
-	"github.com/douyu/jupiter/pkg/server"
-	"github.com/douyu/jupiter/pkg/server/xecho"
-	"github.com/douyu/jupiter/pkg/server/xgrpc"
-	"github.com/douyu/jupiter/pkg/worker"
-	"github.com/douyu/jupiter/pkg/worker/xcron"
+	"github.com/achillesss/jupiter/pkg/server"
+	"github.com/achillesss/jupiter/pkg/server/xecho"
+	"github.com/achillesss/jupiter/pkg/server/xgrpc"
+	"github.com/achillesss/jupiter/pkg/worker"
+	"github.com/achillesss/jupiter/pkg/worker/xcron"
 
-	"github.com/douyu/jupiter"
+	"github.com/achillesss/jupiter"
 	"github.com/labstack/echo/v4"
 )
 

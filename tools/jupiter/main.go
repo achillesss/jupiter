@@ -18,8 +18,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/douyu/jupiter/tools/jupiter/new"
-	"github.com/douyu/jupiter/tools/jupiter/protoc"
+	"github.com/achillesss/jupiter/tools/jupiter/new"
+	"github.com/achillesss/jupiter/tools/jupiter/protoc"
 
 	"github.com/urfave/cli"
 )

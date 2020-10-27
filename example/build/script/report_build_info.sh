@@ -45,13 +45,13 @@ RELEASE_TAG=$(git describe --match '[0-9]*\.[0-9]*\.[0-9]*' --exact-match 2> /de
 GIT_DESCRIBE_TAG=$(git describe --tags)
 
 # used by common/scripts/gobuild.sh
-echo "github.com/douyu/jupiter/pkg.appName=${APP_NAME}"
-echo "github.com/douyu/jupiter/pkg.appID=${APP_ID}"
-echo "github.com/douyu/jupiter/pkg.buildAppVersion=${BUILD_GIT_REVISION}"
-echo "github.com/douyu/jupiter/pkg.buildStatus=${tree_status}"
-echo "github.com/douyu/jupiter/pkg.buildTag=${GIT_DESCRIBE_TAG}"
-echo "github.com/douyu/jupiter/pkg.buildUser=$(whoami)"
-echo "github.com/douyu/jupiter/pkg.buildHost=$(hostname -f)"
-echo "github.com/douyu/jupiter/pkg.buildTime=$(date '+%Y-%m-%d--%T')"
+echo "github.com/achillesss/jupiter/pkg.appName=${APP_NAME}"
+echo "github.com/achillesss/jupiter/pkg.appID=${APP_ID}"
+echo "github.com/achillesss/jupiter/pkg.buildAppVersion=${BUILD_GIT_REVISION}"
+echo "github.com/achillesss/jupiter/pkg.buildStatus=${tree_status}"
+echo "github.com/achillesss/jupiter/pkg.buildTag=${GIT_DESCRIBE_TAG}"
+echo "github.com/achillesss/jupiter/pkg.buildUser=$(whoami)"
+echo "github.com/achillesss/jupiter/pkg.buildHost=$(hostname -f)"
+echo "github.com/achillesss/jupiter/pkg.buildTime=$(date '+%Y-%m-%d--%T')"
 
 

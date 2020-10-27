@@ -19,8 +19,8 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/douyu/jupiter/pkg"
-	"github.com/douyu/jupiter/pkg/conf"
+	"github.com/achillesss/jupiter/pkg"
+	"github.com/achillesss/jupiter/pkg/conf"
 
 	jsoniter "github.com/json-iterator/go"
 )

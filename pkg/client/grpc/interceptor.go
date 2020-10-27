@@ -21,14 +21,14 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/douyu/jupiter/pkg"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/pkg"
+	"github.com/achillesss/jupiter/pkg/xlog"
 
-	"github.com/douyu/jupiter/pkg/ecode"
-	"github.com/douyu/jupiter/pkg/metric"
-	"github.com/douyu/jupiter/pkg/trace"
-	"github.com/douyu/jupiter/pkg/util/xcolor"
-	"github.com/douyu/jupiter/pkg/util/xstring"
+	"github.com/achillesss/jupiter/pkg/ecode"
+	"github.com/achillesss/jupiter/pkg/metric"
+	"github.com/achillesss/jupiter/pkg/trace"
+	"github.com/achillesss/jupiter/pkg/util/xcolor"
+	"github.com/achillesss/jupiter/pkg/util/xstring"
 
 	"github.com/opentracing/opentracing-go/ext"
 	"google.golang.org/grpc"

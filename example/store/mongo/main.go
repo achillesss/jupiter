@@ -20,11 +20,11 @@ import (
 	"log"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/server/xecho"
-	"github.com/douyu/jupiter/pkg/store/mongox"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/pkg/server/xecho"
+	"github.com/achillesss/jupiter/pkg/store/mongox"
+	"github.com/achillesss/jupiter/pkg/xlog"
 
-	"github.com/douyu/jupiter"
+	"github.com/achillesss/jupiter"
 	"github.com/labstack/echo/v4"
 	"go.mongodb.org/mongo-driver/mongo"
 	"gopkg.in/mgo.v2/bson"

@@ -22,10 +22,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/util/xtime"
+	"github.com/achillesss/jupiter/pkg/util/xtime"
 
-	"github.com/douyu/jupiter/pkg/constant"
-	"github.com/douyu/jupiter/pkg/util/xcolor"
+	"github.com/achillesss/jupiter/pkg/constant"
+	"github.com/achillesss/jupiter/pkg/util/xcolor"
 )
 
 const jupiterVersion = "0.2.0"

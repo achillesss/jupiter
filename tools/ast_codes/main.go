@@ -24,10 +24,10 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/pkg/xlog"
 
-	"github.com/douyu/jupiter/pkg/flag"
-	"github.com/douyu/jupiter/pkg/util/xdebug"
+	"github.com/achillesss/jupiter/pkg/flag"
+	"github.com/achillesss/jupiter/pkg/util/xdebug"
 
 	"github.com/fatih/structtag"
 	"github.com/flosch/pongo2"
@@ -146,7 +146,7 @@ func main() {
 			data[mod][n.Level] = append(data[mod][n.Level], map[string]interface{}{
 				"message":  n.Message,
 				"fields":   strings.Join(fields, ","),
-				"position": "https://github.com/douyu/jupiter/blob/master/" + filepath + "#L" + strconv.Itoa(n.Position.Line),
+				"position": "https://github.com/achillesss/jupiter/blob/master/" + filepath + "#L" + strconv.Itoa(n.Position.Line),
 			})
 		}
 	}
@@ -215,7 +215,7 @@ func main() {
 				mdData["pkg"] = desc.Package
 				mdData["name"] = desc.Name
 				mdData["fields"] = mdfields
-				mdData["position"] = "https://github.com/douyu/jupiter/blob/master/" + filepath + "#L" + strconv.Itoa(desc.Position.Line)
+				mdData["position"] = "https://github.com/achillesss/jupiter/blob/master/" + filepath + "#L" + strconv.Itoa(desc.Position.Line)
 			}
 
 			fmt.Printf("mdData = %+v\n", mdData["position"])

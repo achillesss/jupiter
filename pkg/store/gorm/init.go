@@ -4,9 +4,9 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/metric"
-	"github.com/douyu/jupiter/pkg/server/governor"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/pkg/metric"
+	"github.com/achillesss/jupiter/pkg/server/governor"
+	"github.com/achillesss/jupiter/pkg/xlog"
 
 	jsoniter "github.com/json-iterator/go"
 )

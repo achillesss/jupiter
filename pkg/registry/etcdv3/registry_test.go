@@ -20,12 +20,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/constant"
+	"github.com/achillesss/jupiter/pkg/constant"
 
-	"github.com/douyu/jupiter/pkg/client/etcdv3"
-	"github.com/douyu/jupiter/pkg/registry"
-	"github.com/douyu/jupiter/pkg/server"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/pkg/client/etcdv3"
+	"github.com/achillesss/jupiter/pkg/registry"
+	"github.com/achillesss/jupiter/pkg/server"
+	"github.com/achillesss/jupiter/pkg/xlog"
 
 	"github.com/stretchr/testify/assert"
 )

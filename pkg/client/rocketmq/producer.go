@@ -17,10 +17,10 @@ package rocketmq
 import (
 	"context"
 
-	"github.com/douyu/jupiter/pkg/defers"
-	"github.com/douyu/jupiter/pkg/istats"
-	"github.com/douyu/jupiter/pkg/util/xdebug"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/pkg/defers"
+	"github.com/achillesss/jupiter/pkg/istats"
+	"github.com/achillesss/jupiter/pkg/util/xdebug"
+	"github.com/achillesss/jupiter/pkg/xlog"
 
 	"github.com/apache/rocketmq-client-go/v2"
 	"github.com/apache/rocketmq-client-go/v2/primitive"

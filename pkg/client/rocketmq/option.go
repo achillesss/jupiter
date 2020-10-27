@@ -4,9 +4,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/util/xdebug"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/pkg/conf"
+	"github.com/achillesss/jupiter/pkg/util/xdebug"
+	"github.com/achillesss/jupiter/pkg/xlog"
 )
 
 // Config config...

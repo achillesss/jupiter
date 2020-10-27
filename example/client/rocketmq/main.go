@@ -19,11 +19,11 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/douyu/jupiter/pkg/client/rocketmq"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/pkg/client/rocketmq"
+	"github.com/achillesss/jupiter/pkg/xlog"
 
 	"github.com/apache/rocketmq-client-go/v2/primitive"
-	"github.com/douyu/jupiter"
+	"github.com/achillesss/jupiter"
 )
 
 // run: go run main.go -config=config.toml

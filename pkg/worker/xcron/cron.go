@@ -18,8 +18,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/util/xstring"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/pkg/util/xstring"
+	"github.com/achillesss/jupiter/pkg/xlog"
 
 	"github.com/robfig/cron/v3"
 )

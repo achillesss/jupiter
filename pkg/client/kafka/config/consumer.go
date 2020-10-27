@@ -3,10 +3,10 @@ package config
 import (
 	"encoding/json"
 
+	"github.com/achillesss/jupiter/pkg/conf"
+	file_datasource "github.com/achillesss/jupiter/pkg/datasource/file"
+	"github.com/achillesss/jupiter/pkg/xlog"
 	"github.com/confluentinc/confluent-kafka-go/kafka"
-	"github.com/douyu/jupiter/pkg/conf"
-	file_datasource "github.com/douyu/jupiter/pkg/datasource/file"
-	"github.com/douyu/jupiter/pkg/xlog"
 	"github.com/gqcn/structs"
 )
 

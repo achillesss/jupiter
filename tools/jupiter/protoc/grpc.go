@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/douyu/jupiter/pkg/util/xcolor"
+	"github.com/achillesss/jupiter/pkg/util/xcolor"
 )
 
 const (

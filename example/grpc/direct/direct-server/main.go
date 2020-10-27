@@ -17,10 +17,10 @@ package main
 import (
 	"context"
 
-	"github.com/douyu/jupiter/pkg/server/xgrpc"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/pkg/server/xgrpc"
+	"github.com/achillesss/jupiter/pkg/xlog"
 
-	"github.com/douyu/jupiter"
+	"github.com/achillesss/jupiter"
 	"google.golang.org/grpc/examples/helloworld/helloworld"
 )
 

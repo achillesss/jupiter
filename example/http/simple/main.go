@@ -15,10 +15,10 @@
 package main
 
 import (
-	"github.com/douyu/jupiter/pkg/server/xecho"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/pkg/server/xecho"
+	"github.com/achillesss/jupiter/pkg/xlog"
 
-	"github.com/douyu/jupiter"
+	"github.com/achillesss/jupiter"
 	"github.com/labstack/echo/v4"
 )
 

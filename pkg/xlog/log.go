@@ -22,9 +22,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/defers"
-	"github.com/douyu/jupiter/pkg/util/xcolor"
+	"github.com/achillesss/jupiter/pkg/conf"
+	"github.com/achillesss/jupiter/pkg/defers"
+	"github.com/achillesss/jupiter/pkg/util/xcolor"
 
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"

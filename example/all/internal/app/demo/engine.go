@@ -17,17 +17,17 @@ package demo
 import (
 	"time"
 
-	"github.com/douyu/jupiter/example/all/internal/app/greeter"
-	"github.com/douyu/jupiter/pkg/sentinel"
-	"github.com/douyu/jupiter/pkg/server/xecho"
-	"github.com/douyu/jupiter/pkg/server/xgrpc"
-	"github.com/douyu/jupiter/pkg/util/xgo"
-	"github.com/douyu/jupiter/pkg/worker/xcron"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/example/all/internal/app/greeter"
+	"github.com/achillesss/jupiter/pkg/sentinel"
+	"github.com/achillesss/jupiter/pkg/server/xecho"
+	"github.com/achillesss/jupiter/pkg/server/xgrpc"
+	"github.com/achillesss/jupiter/pkg/util/xgo"
+	"github.com/achillesss/jupiter/pkg/worker/xcron"
+	"github.com/achillesss/jupiter/pkg/xlog"
 
 	sentinel_echo "github.com/alibaba/sentinel-golang/adapter/echo"
 	"github.com/alibaba/sentinel-golang/core/flow"
-	"github.com/douyu/jupiter"
+	"github.com/achillesss/jupiter"
 	"github.com/labstack/echo/v4"
 	"google.golang.org/grpc/examples/helloworld/helloworld"
 

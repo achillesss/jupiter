@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/douyu/jupiter/pkg/client/kafka/config"
+	"github.com/achillesss/jupiter/pkg/client/kafka/config"
 )
 
 func runProducer(p *config.Producer, topics ...string) {

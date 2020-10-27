@@ -5,7 +5,7 @@ import (
 	"errors"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/util/xtest/proto/testproto"
+	"github.com/achillesss/jupiter/pkg/util/xtest/proto/testproto"
 
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"

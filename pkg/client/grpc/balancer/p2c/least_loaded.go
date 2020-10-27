@@ -17,8 +17,8 @@ package p2c
 import (
 	"context"
 
-	"github.com/douyu/jupiter/pkg/util/xp2c"
-	"github.com/douyu/jupiter/pkg/util/xp2c/leastloaded"
+	"github.com/achillesss/jupiter/pkg/util/xp2c"
+	"github.com/achillesss/jupiter/pkg/util/xp2c/leastloaded"
 
 	"google.golang.org/grpc/balancer"
 	"google.golang.org/grpc/balancer/base"

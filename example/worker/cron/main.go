@@ -18,10 +18,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/worker/xcron"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/pkg/worker/xcron"
+	"github.com/achillesss/jupiter/pkg/xlog"
 
-	"github.com/douyu/jupiter"
+	"github.com/achillesss/jupiter"
 )
 
 func main() {

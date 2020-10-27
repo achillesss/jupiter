@@ -17,11 +17,11 @@ package main
 import (
 	"context"
 
-	"github.com/douyu/jupiter/pkg/conf"
-	_ "github.com/douyu/jupiter/pkg/datasource/etcdv3"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/pkg/conf"
+	_ "github.com/achillesss/jupiter/pkg/datasource/etcdv3"
+	"github.com/achillesss/jupiter/pkg/xlog"
 
-	"github.com/douyu/jupiter"
+	"github.com/achillesss/jupiter"
 	"go.etcd.io/etcd/clientv3"
 )
 

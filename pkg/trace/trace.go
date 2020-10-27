@@ -17,7 +17,7 @@ package trace
 import (
 	"context"
 
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/pkg/xlog"
 
 	"github.com/opentracing/opentracing-go"
 	"github.com/opentracing/opentracing-go/log"

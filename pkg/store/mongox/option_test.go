@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/conf"
+	"github.com/achillesss/jupiter/pkg/conf"
 
 	"github.com/BurntSushi/toml"
 )

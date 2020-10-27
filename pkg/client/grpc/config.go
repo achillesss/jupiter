@@ -17,11 +17,11 @@ package grpc
 import (
 	"time"
 
-	"github.com/douyu/jupiter/pkg/util/xtime"
+	"github.com/achillesss/jupiter/pkg/util/xtime"
 
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/ecode"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/pkg/conf"
+	"github.com/achillesss/jupiter/pkg/ecode"
+	"github.com/achillesss/jupiter/pkg/xlog"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/balancer/roundrobin"

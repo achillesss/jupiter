@@ -19,12 +19,12 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/douyu/jupiter/pkg/constant"
-	"github.com/douyu/jupiter/pkg/ecode"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/achillesss/jupiter/pkg/constant"
+	"github.com/achillesss/jupiter/pkg/ecode"
+	"github.com/achillesss/jupiter/pkg/xlog"
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 
-	"github.com/douyu/jupiter/pkg/conf"
+	"github.com/achillesss/jupiter/pkg/conf"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"

@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"sync"
 
-	"github.com/douyu/jupiter/pkg/application"
+	"github.com/achillesss/jupiter/pkg/application"
 
 	jsoniter "github.com/json-iterator/go"
 )

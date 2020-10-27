@@ -17,9 +17,9 @@ package main
 import (
 	"log"
 
-	"github.com/douyu/jupiter/example/all/internal/app/demo"
-	"github.com/douyu/jupiter/pkg/registry/compound"
-	"github.com/douyu/jupiter/pkg/registry/etcdv3"
+	"github.com/achillesss/jupiter/example/all/internal/app/demo"
+	"github.com/achillesss/jupiter/pkg/registry/compound"
+	"github.com/achillesss/jupiter/pkg/registry/etcdv3"
 )
 
 func main() {

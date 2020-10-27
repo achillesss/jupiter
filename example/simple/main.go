@@ -17,12 +17,12 @@ package main
 import (
 	"log"
 
-	compound_registry "github.com/douyu/jupiter/pkg/registry/compound"
-	etcdv3_registry "github.com/douyu/jupiter/pkg/registry/etcdv3"
-	"github.com/douyu/jupiter/pkg/server"
-	"github.com/douyu/jupiter/pkg/server/xgin"
+	compound_registry "github.com/achillesss/jupiter/pkg/registry/compound"
+	etcdv3_registry "github.com/achillesss/jupiter/pkg/registry/etcdv3"
+	"github.com/achillesss/jupiter/pkg/server"
+	"github.com/achillesss/jupiter/pkg/server/xgin"
 
-	"github.com/douyu/jupiter"
+	"github.com/achillesss/jupiter"
 	"github.com/gin-gonic/gin"
 )
 

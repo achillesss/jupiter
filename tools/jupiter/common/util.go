@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/douyu/jupiter/pkg/util/xregexp"
+	"github.com/achillesss/jupiter/pkg/util/xregexp"
 )
 
 // GetModPath ...
